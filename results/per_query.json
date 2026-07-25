@@ -1,0 +1,2408 @@
+{
+  "naive": [
+    {
+      "query_id": "q001",
+      "clause_type": "Exclusivity",
+      "doc_id": "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.058823529411764705,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:40",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:31",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:39",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:26",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:30"
+      ]
+    },
+    {
+      "query_id": "q002",
+      "clause_type": "Minimum Commitment",
+      "doc_id": "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:5",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:4",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:6",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:3",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:13"
+      ]
+    },
+    {
+      "query_id": "q003",
+      "clause_type": "Insurance",
+      "doc_id": "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:10",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:0",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:16",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:9",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:27"
+      ]
+    },
+    {
+      "query_id": "q004",
+      "clause_type": "Post-Termination Services",
+      "doc_id": "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:9",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:7",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:10",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:11",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:8"
+      ]
+    },
+    {
+      "query_id": "q005",
+      "clause_type": "Renewal Term",
+      "doc_id": "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:7",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:11",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:26",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:9",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:naive:22"
+      ]
+    },
+    {
+      "query_id": "q006",
+      "clause_type": "Exclusivity",
+      "doc_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development",
+      "precision@5": 0.0,
+      "recall@10": 0.5,
+      "mrr": 0.1111111111111111,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:19",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:18",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:16",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:21",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:20"
+      ]
+    },
+    {
+      "query_id": "q007",
+      "clause_type": "Liquidated Damages",
+      "doc_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:19",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:7",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:6",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:20",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:16"
+      ]
+    },
+    {
+      "query_id": "q008",
+      "clause_type": "Non-Compete",
+      "doc_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:19",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:18",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:9",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:16",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:11"
+      ]
+    },
+    {
+      "query_id": "q009",
+      "clause_type": "Ip Ownership Assignment",
+      "doc_id": "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5",
+      "precision@5": 0.2,
+      "recall@10": 0.5,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:naive:22",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:naive:23",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:naive:42",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:naive:2",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:naive:25"
+      ]
+    },
+    {
+      "query_id": "q010",
+      "clause_type": "Joint Ip Ownership",
+      "doc_id": "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:naive:22",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:naive:23",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:naive:42",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:naive:20",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:naive:2"
+      ]
+    },
+    {
+      "query_id": "q011",
+      "clause_type": "Joint Ip Ownership",
+      "doc_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi",
+      "precision@5": 0.4,
+      "recall@10": 0.6666666666666666,
+      "mrr": 1.0,
+      "span_coverage@5": 0.4418219461697723,
+      "top_chunk_ids": [
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:53",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:52",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:50",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:51",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:57"
+      ]
+    },
+    {
+      "query_id": "q012",
+      "clause_type": "Minimum Commitment",
+      "doc_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.0,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:24",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:62",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:68",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:45",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:64"
+      ]
+    },
+    {
+      "query_id": "q013",
+      "clause_type": "No-Solicit Of Employees",
+      "doc_id": "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:45",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:46",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:47",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:44",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:48"
+      ]
+    },
+    {
+      "query_id": "q014",
+      "clause_type": "Rofr/Rofo/Rofn",
+      "doc_id": "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement",
+      "precision@5": 0.2,
+      "recall@10": 0.3333333333333333,
+      "mrr": 1.0,
+      "span_coverage@5": 0.5882352941176471,
+      "top_chunk_ids": [
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:8",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:39",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:65",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:38",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:53"
+      ]
+    },
+    {
+      "query_id": "q015",
+      "clause_type": "Termination For Convenience",
+      "doc_id": "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement",
+      "precision@5": 0.2,
+      "recall@10": 0.5,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:22",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:17",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:21",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:27",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:29"
+      ]
+    },
+    {
+      "query_id": "q016",
+      "clause_type": "License Grant",
+      "doc_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.09090909090909091,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:86",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:88",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:84",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:70",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:87"
+      ]
+    },
+    {
+      "query_id": "q017",
+      "clause_type": "Termination For Convenience",
+      "doc_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:78",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:77",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:79",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:76",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:89"
+      ]
+    },
+    {
+      "query_id": "q018",
+      "clause_type": "Minimum Commitment",
+      "doc_id": "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.2,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:naive:9",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:naive:33",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:naive:10",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:naive:27",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:naive:7"
+      ]
+    },
+    {
+      "query_id": "q019",
+      "clause_type": "Notice Period To Terminate Renewal",
+      "doc_id": "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:naive:34",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:naive:33",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:naive:8",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:naive:42",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:naive:44"
+      ]
+    },
+    {
+      "query_id": "q020",
+      "clause_type": "Cap On Liability",
+      "doc_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a",
+      "precision@5": 0.0,
+      "recall@10": 0.4,
+      "mrr": 0.16666666666666666,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:26",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:27",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:25",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:14",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:12"
+      ]
+    },
+    {
+      "query_id": "q021",
+      "clause_type": "Governing Law",
+      "doc_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:21",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:32",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:33",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:20",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:34"
+      ]
+    },
+    {
+      "query_id": "q022",
+      "clause_type": "Notice Period To Terminate Renewal",
+      "doc_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:26",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:1",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:2",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:25",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:33"
+      ]
+    },
+    {
+      "query_id": "q023",
+      "clause_type": "Ip Ownership Assignment",
+      "doc_id": "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement",
+      "precision@5": 0.6,
+      "recall@10": 0.8333333333333334,
+      "mrr": 1.0,
+      "span_coverage@5": 0.5931223371880706,
+      "top_chunk_ids": [
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:8",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:14",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:9",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:10",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:16"
+      ]
+    },
+    {
+      "query_id": "q024",
+      "clause_type": "No-Solicit Of Employees",
+      "doc_id": "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:22",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:17",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:15",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:24",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:28"
+      ]
+    },
+    {
+      "query_id": "q025",
+      "clause_type": "Cap On Liability",
+      "doc_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 0.7033639143730887,
+      "top_chunk_ids": [
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:28",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:17",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:15",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:18",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:32"
+      ]
+    },
+    {
+      "query_id": "q026",
+      "clause_type": "Change Of Control",
+      "doc_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra",
+      "precision@5": 0.0,
+      "recall@10": 1.0,
+      "mrr": 0.1111111111111111,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:16",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:32",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:14",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:23",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:29"
+      ]
+    },
+    {
+      "query_id": "q027",
+      "clause_type": "Governing Law",
+      "doc_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.25,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:27",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:32",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:29",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:30",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:24"
+      ]
+    },
+    {
+      "query_id": "q028",
+      "clause_type": "Cap On Liability",
+      "doc_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:43",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:44",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:40",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:36",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:45"
+      ]
+    },
+    {
+      "query_id": "q029",
+      "clause_type": "Governing Law",
+      "doc_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:45",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:46",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:44",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:47",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:40"
+      ]
+    },
+    {
+      "query_id": "q030",
+      "clause_type": "Ip Ownership Assignment",
+      "doc_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag",
+      "precision@5": 0.2,
+      "recall@10": 0.3333333333333333,
+      "mrr": 0.5,
+      "span_coverage@5": 0.5389784946236559,
+      "top_chunk_ids": [
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:45",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:28",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:47",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:40",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:44"
+      ]
+    },
+    {
+      "query_id": "q031",
+      "clause_type": "Exclusivity",
+      "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+      "precision@5": 0.2,
+      "recall@10": 0.5,
+      "mrr": 1.0,
+      "span_coverage@5": 0.5046904315196998,
+      "top_chunk_ids": [
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:28",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:72",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:68",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:3",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:11"
+      ]
+    },
+    {
+      "query_id": "q032",
+      "clause_type": "Non-Compete",
+      "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+      "precision@5": 0.2,
+      "recall@10": 0.3333333333333333,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 0.30430879712746856,
+      "top_chunk_ids": [
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:28",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:32",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:27",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:56",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:31"
+      ]
+    },
+    {
+      "query_id": "q033",
+      "clause_type": "Rofr/Rofo/Rofn",
+      "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+      "precision@5": 0.6,
+      "recall@10": 0.5714285714285714,
+      "mrr": 0.5,
+      "span_coverage@5": 0.6504854368932039,
+      "top_chunk_ids": [
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:28",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:47",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:48",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:32",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:11"
+      ]
+    },
+    {
+      "query_id": "q034",
+      "clause_type": "Non-Compete",
+      "doc_id": "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:naive:2",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:naive:53",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:naive:54",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:naive:55",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:naive:3"
+      ]
+    },
+    {
+      "query_id": "q035",
+      "clause_type": "Uncapped Liability",
+      "doc_id": "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br",
+      "precision@5": 0.6,
+      "recall@10": 0.75,
+      "mrr": 1.0,
+      "span_coverage@5": 0.9920713577799801,
+      "top_chunk_ids": [
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:naive:34",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:naive:35",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:naive:48",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:naive:46",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:naive:45"
+      ]
+    },
+    {
+      "query_id": "q036",
+      "clause_type": "Most Favored Nation",
+      "doc_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement",
+      "precision@5": 0.2,
+      "recall@10": 0.5,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:46",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:10",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:51",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:59",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:50"
+      ]
+    },
+    {
+      "query_id": "q037",
+      "clause_type": "Renewal Term",
+      "doc_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:14",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:15",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:37",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:8",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:39"
+      ]
+    },
+    {
+      "query_id": "q038",
+      "clause_type": "Rofr/Rofo/Rofn",
+      "doc_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.07142857142857142,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:59",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:43",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:46",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:58",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:52"
+      ]
+    },
+    {
+      "query_id": "q039",
+      "clause_type": "Governing Law",
+      "doc_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement",
+      "precision@5": 0.0,
+      "recall@10": 1.0,
+      "mrr": 0.14285714285714285,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:47",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:50",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:49",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:43",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:46"
+      ]
+    },
+    {
+      "query_id": "q040",
+      "clause_type": "License Grant",
+      "doc_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement",
+      "precision@5": 0.0,
+      "recall@10": 1.0,
+      "mrr": 0.16666666666666666,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:48",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:41",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:44",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:51",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:36"
+      ]
+    },
+    {
+      "query_id": "q041",
+      "clause_type": "Uncapped Liability",
+      "doc_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:44",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:40",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:45",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:41",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:43"
+      ]
+    },
+    {
+      "query_id": "q042",
+      "clause_type": "Cap On Liability",
+      "doc_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a",
+      "precision@5": 0.4,
+      "recall@10": 0.6666666666666666,
+      "mrr": 1.0,
+      "span_coverage@5": 0.6432350718065004,
+      "top_chunk_ids": [
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:52",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:53",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:58",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:5",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:51"
+      ]
+    },
+    {
+      "query_id": "q043",
+      "clause_type": "Irrevocable Or Perpetual License",
+      "doc_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a",
+      "precision@5": 0.2,
+      "recall@10": 0.4,
+      "mrr": 1.0,
+      "span_coverage@5": 0.14893617021276595,
+      "top_chunk_ids": [
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:27",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:11",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:35",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:33",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:62"
+      ]
+    },
+    {
+      "query_id": "q044",
+      "clause_type": "No-Solicit Of Employees",
+      "doc_id": "quaker-chemical-corporation-non-competition-and-non-solicita",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "quaker-chemical-corporation-non-competition-and-non-solicita:naive:11",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:naive:10",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:naive:18",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:naive:22",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:naive:19"
+      ]
+    },
+    {
+      "query_id": "q045",
+      "clause_type": "Non-Compete",
+      "doc_id": "quaker-chemical-corporation-non-competition-and-non-solicita",
+      "precision@5": 0.4,
+      "recall@10": 0.75,
+      "mrr": 0.5,
+      "span_coverage@5": 0.835909631391201,
+      "top_chunk_ids": [
+        "quaker-chemical-corporation-non-competition-and-non-solicita:naive:12",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:naive:8",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:naive:10",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:naive:21",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:naive:22"
+      ]
+    },
+    {
+      "query_id": "q046",
+      "clause_type": "Insurance",
+      "doc_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem",
+      "precision@5": 0.8,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:35",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:33",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:34",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:45",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:32"
+      ]
+    },
+    {
+      "query_id": "q047",
+      "clause_type": "Irrevocable Or Perpetual License",
+      "doc_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem",
+      "precision@5": 0.2,
+      "recall@10": 0.3333333333333333,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 0.5089430894308943,
+      "top_chunk_ids": [
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:5",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:62",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:4",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:54",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:36"
+      ]
+    },
+    {
+      "query_id": "q048",
+      "clause_type": "Post-Termination Services",
+      "doc_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:62",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:37",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:38",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:36",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:61"
+      ]
+    },
+    {
+      "query_id": "q049",
+      "clause_type": "Audit Rights",
+      "doc_id": "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc",
+      "precision@5": 0.4,
+      "recall@10": 0.6666666666666666,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:naive:44",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:naive:43",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:naive:1",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:naive:66",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:naive:61"
+      ]
+    },
+    {
+      "query_id": "q050",
+      "clause_type": "Insurance",
+      "doc_id": "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc",
+      "precision@5": 0.8,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 0.7952782462057335,
+      "top_chunk_ids": [
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:naive:47",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:naive:50",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:naive:52",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:naive:49",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:naive:1"
+      ]
+    }
+  ],
+  "clause": [
+    {
+      "query_id": "q001",
+      "clause_type": "Exclusivity",
+      "doc_id": "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.05,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:25",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:27",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:24",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:18",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:16"
+      ]
+    },
+    {
+      "query_id": "q002",
+      "clause_type": "Minimum Commitment",
+      "doc_id": "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:4",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:3",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:25",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:8",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:17"
+      ]
+    },
+    {
+      "query_id": "q003",
+      "clause_type": "Insurance",
+      "doc_id": "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:24",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:16",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:36",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:0",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:33"
+      ]
+    },
+    {
+      "query_id": "q004",
+      "clause_type": "Post-Termination Services",
+      "doc_id": "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre",
+      "precision@5": 0.0,
+      "recall@10": 1.0,
+      "mrr": 0.16666666666666666,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:17",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:12",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:18",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:16",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:24"
+      ]
+    },
+    {
+      "query_id": "q005",
+      "clause_type": "Renewal Term",
+      "doc_id": "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:18",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:17",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:12",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:14",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:16"
+      ]
+    },
+    {
+      "query_id": "q006",
+      "clause_type": "Exclusivity",
+      "doc_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.06666666666666667,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:27",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:25",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:33",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:30",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:28"
+      ]
+    },
+    {
+      "query_id": "q007",
+      "clause_type": "Liquidated Damages",
+      "doc_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:12",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:29",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:11",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:32",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:27"
+      ]
+    },
+    {
+      "query_id": "q008",
+      "clause_type": "Non-Compete",
+      "doc_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development",
+      "precision@5": 0.0,
+      "recall@10": 0.5,
+      "mrr": 0.1,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:27",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:25",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:30",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:34",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:20"
+      ]
+    },
+    {
+      "query_id": "q009",
+      "clause_type": "Ip Ownership Assignment",
+      "doc_id": "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:14",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:24",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:15",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:21",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:11"
+      ]
+    },
+    {
+      "query_id": "q010",
+      "clause_type": "Joint Ip Ownership",
+      "doc_id": "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:14",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:24",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:15",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:2",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:11"
+      ]
+    },
+    {
+      "query_id": "q011",
+      "clause_type": "Joint Ip Ownership",
+      "doc_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:41",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:39",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:8",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:38",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:66"
+      ]
+    },
+    {
+      "query_id": "q012",
+      "clause_type": "Minimum Commitment",
+      "doc_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.0,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:68",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:66",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:48",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:54",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:34"
+      ]
+    },
+    {
+      "query_id": "q013",
+      "clause_type": "No-Solicit Of Employees",
+      "doc_id": "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement",
+      "precision@5": 0.0,
+      "recall@10": 0.5,
+      "mrr": 0.14285714285714285,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:55",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:2",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:1",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:75",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:53"
+      ]
+    },
+    {
+      "query_id": "q014",
+      "clause_type": "Rofr/Rofo/Rofn",
+      "doc_id": "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:75",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:10",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:46",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:2",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:11"
+      ]
+    },
+    {
+      "query_id": "q015",
+      "clause_type": "Termination For Convenience",
+      "doc_id": "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:30",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:31",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:37",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:35",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:38"
+      ]
+    },
+    {
+      "query_id": "q016",
+      "clause_type": "License Grant",
+      "doc_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement",
+      "precision@5": 0.0,
+      "recall@10": 0.16666666666666666,
+      "mrr": 0.125,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:74",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:53",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:76",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:45",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:57"
+      ]
+    },
+    {
+      "query_id": "q017",
+      "clause_type": "Termination For Convenience",
+      "doc_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:64",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:25",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:66",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:79",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:65"
+      ]
+    },
+    {
+      "query_id": "q018",
+      "clause_type": "Minimum Commitment",
+      "doc_id": "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:7",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:9",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:38",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:31",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:19"
+      ]
+    },
+    {
+      "query_id": "q019",
+      "clause_type": "Notice Period To Terminate Renewal",
+      "doc_id": "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:32",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:31",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:13",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:8",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:9"
+      ]
+    },
+    {
+      "query_id": "q020",
+      "clause_type": "Cap On Liability",
+      "doc_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a",
+      "precision@5": 0.2,
+      "recall@10": 0.6666666666666666,
+      "mrr": 0.5,
+      "span_coverage@5": 0.6742364917776038,
+      "top_chunk_ids": [
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:13",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:11",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:12",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:17",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:10"
+      ]
+    },
+    {
+      "query_id": "q021",
+      "clause_type": "Governing Law",
+      "doc_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.2,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:10",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:2",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:13",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:6",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:16"
+      ]
+    },
+    {
+      "query_id": "q022",
+      "clause_type": "Notice Period To Terminate Renewal",
+      "doc_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:12",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:13",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:6",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:16",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:19"
+      ]
+    },
+    {
+      "query_id": "q023",
+      "clause_type": "Ip Ownership Assignment",
+      "doc_id": "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement",
+      "precision@5": 0.6,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:6",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:5",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:8",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:7",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:4"
+      ]
+    },
+    {
+      "query_id": "q024",
+      "clause_type": "No-Solicit Of Employees",
+      "doc_id": "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:10",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:0",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:12",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:9",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:13"
+      ]
+    },
+    {
+      "query_id": "q025",
+      "clause_type": "Cap On Liability",
+      "doc_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:21",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:19",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:20",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:18",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:40"
+      ]
+    },
+    {
+      "query_id": "q026",
+      "clause_type": "Change Of Control",
+      "doc_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:1",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:17",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:19",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:18",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:37"
+      ]
+    },
+    {
+      "query_id": "q027",
+      "clause_type": "Governing Law",
+      "doc_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:39",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:37",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:32",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:19",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:33"
+      ]
+    },
+    {
+      "query_id": "q028",
+      "clause_type": "Cap On Liability",
+      "doc_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:44",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:38",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:49",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:43",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:34"
+      ]
+    },
+    {
+      "query_id": "q029",
+      "clause_type": "Governing Law",
+      "doc_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.25,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:46",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:47",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:50",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:48",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:45"
+      ]
+    },
+    {
+      "query_id": "q030",
+      "clause_type": "Ip Ownership Assignment",
+      "doc_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.047619047619047616,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:27",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:50",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:46",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:41",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:38"
+      ]
+    },
+    {
+      "query_id": "q031",
+      "clause_type": "Exclusivity",
+      "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+      "precision@5": 0.2,
+      "recall@10": 0.5,
+      "mrr": 0.25,
+      "span_coverage@5": 0.5234521575984991,
+      "top_chunk_ids": [
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:75",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:43",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:11",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:29",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:68"
+      ]
+    },
+    {
+      "query_id": "q032",
+      "clause_type": "Non-Compete",
+      "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.05,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:28",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:29",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:68",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:32",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:31"
+      ]
+    },
+    {
+      "query_id": "q033",
+      "clause_type": "Rofr/Rofo/Rofn",
+      "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+      "precision@5": 0.4,
+      "recall@10": 0.6666666666666666,
+      "mrr": 1.0,
+      "span_coverage@5": 0.6504854368932039,
+      "top_chunk_ids": [
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:48",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:49",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:29",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:32",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:11"
+      ]
+    },
+    {
+      "query_id": "q034",
+      "clause_type": "Non-Compete",
+      "doc_id": "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br",
+      "precision@5": 0.0,
+      "recall@10": 1.0,
+      "mrr": 0.1111111111111111,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:69",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:54",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:2",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:73",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:68"
+      ]
+    },
+    {
+      "query_id": "q035",
+      "clause_type": "Uncapped Liability",
+      "doc_id": "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br",
+      "precision@5": 0.2,
+      "recall@10": 0.5,
+      "mrr": 1.0,
+      "span_coverage@5": 0.6303270564915758,
+      "top_chunk_ids": [
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:59",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:47",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:51",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:49",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:69"
+      ]
+    },
+    {
+      "query_id": "q036",
+      "clause_type": "Most Favored Nation",
+      "doc_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:40",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:6",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:46",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:63",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:62"
+      ]
+    },
+    {
+      "query_id": "q037",
+      "clause_type": "Renewal Term",
+      "doc_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:10",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:11",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:19",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:35",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:28"
+      ]
+    },
+    {
+      "query_id": "q038",
+      "clause_type": "Rofr/Rofo/Rofn",
+      "doc_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.05555555555555555,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:40",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:62",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:64",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:58",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:63"
+      ]
+    },
+    {
+      "query_id": "q039",
+      "clause_type": "Governing Law",
+      "doc_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:33",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:32",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:26",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:31",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:29"
+      ]
+    },
+    {
+      "query_id": "q040",
+      "clause_type": "License Grant",
+      "doc_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:32",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:33",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:24",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:28",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:29"
+      ]
+    },
+    {
+      "query_id": "q041",
+      "clause_type": "Uncapped Liability",
+      "doc_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:29",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:25",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:26",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:27",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:33"
+      ]
+    },
+    {
+      "query_id": "q042",
+      "clause_type": "Cap On Liability",
+      "doc_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a",
+      "precision@5": 0.2,
+      "recall@10": 0.5,
+      "mrr": 1.0,
+      "span_coverage@5": 0.6432350718065004,
+      "top_chunk_ids": [
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:29",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:32",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:33",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:35",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:39"
+      ]
+    },
+    {
+      "query_id": "q043",
+      "clause_type": "Irrevocable Or Perpetual License",
+      "doc_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 0.636968085106383,
+      "top_chunk_ids": [
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:15",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:6",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:34",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:3",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:18"
+      ]
+    },
+    {
+      "query_id": "q044",
+      "clause_type": "No-Solicit Of Employees",
+      "doc_id": "quaker-chemical-corporation-non-competition-and-non-solicita",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:6",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:10",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:7",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:12",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:5"
+      ]
+    },
+    {
+      "query_id": "q045",
+      "clause_type": "Non-Compete",
+      "doc_id": "quaker-chemical-corporation-non-competition-and-non-solicita",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:5",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:7",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:9",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:6",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:12"
+      ]
+    },
+    {
+      "query_id": "q046",
+      "clause_type": "Insurance",
+      "doc_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:20",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:19",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:35",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:18",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:27"
+      ]
+    },
+    {
+      "query_id": "q047",
+      "clause_type": "Irrevocable Or Perpetual License",
+      "doc_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:3",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:35",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:5",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:21",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:0"
+      ]
+    },
+    {
+      "query_id": "q048",
+      "clause_type": "Post-Termination Services",
+      "doc_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.25,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:34",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:21",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:18",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:22",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:24"
+      ]
+    },
+    {
+      "query_id": "q049",
+      "clause_type": "Audit Rights",
+      "doc_id": "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:40",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:39",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:12",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:45",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:65"
+      ]
+    },
+    {
+      "query_id": "q050",
+      "clause_type": "Insurance",
+      "doc_id": "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc",
+      "precision@5": 0.8,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:46",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:44",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:43",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:64",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:45"
+      ]
+    }
+  ],
+  "clause + rerank": [
+    {
+      "query_id": "q001",
+      "clause_type": "Exclusivity",
+      "doc_id": "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:27",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:24",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:5",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:7",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:25"
+      ]
+    },
+    {
+      "query_id": "q002",
+      "clause_type": "Minimum Commitment",
+      "doc_id": "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:4",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:3",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:7",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:24",
+        "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:clause:18"
+      ]
+    },
+    {
+      "query_id": "q003",
+      "clause_type": "Insurance",
+      "doc_id": "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:24",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:2",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:16",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:0",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:31"
+      ]
+    },
+    {
+      "query_id": "q004",
+      "clause_type": "Post-Termination Services",
+      "doc_id": "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:18",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:15",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:24",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:12",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:16"
+      ]
+    },
+    {
+      "query_id": "q005",
+      "clause_type": "Renewal Term",
+      "doc_id": "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:18",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:17",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:14",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:12",
+        "americanphysicianscapitalinc-03-31-2003-ex-10-26-agency-agre:clause:15"
+      ]
+    },
+    {
+      "query_id": "q006",
+      "clause_type": "Exclusivity",
+      "doc_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.05555555555555555,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:33",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:20",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:27",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:25",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:21"
+      ]
+    },
+    {
+      "query_id": "q007",
+      "clause_type": "Liquidated Damages",
+      "doc_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:29",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:12",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:28",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:25",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:10"
+      ]
+    },
+    {
+      "query_id": "q008",
+      "clause_type": "Non-Compete",
+      "doc_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.06666666666666667,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:27",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:20",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:25",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:21",
+        "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:clause:16"
+      ]
+    },
+    {
+      "query_id": "q009",
+      "clause_type": "Ip Ownership Assignment",
+      "doc_id": "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:21",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:24",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:14",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:15",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:9"
+      ]
+    },
+    {
+      "query_id": "q010",
+      "clause_type": "Joint Ip Ownership",
+      "doc_id": "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:24",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:21",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:14",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:18",
+        "artaratherapeuticsinc-20200110-8-k-ex-10-5-11943350-ex-10-5:clause:15"
+      ]
+    },
+    {
+      "query_id": "q011",
+      "clause_type": "Joint Ip Ownership",
+      "doc_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:41",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:39",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:38",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:8",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:59"
+      ]
+    },
+    {
+      "query_id": "q012",
+      "clause_type": "Minimum Commitment",
+      "doc_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.0,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:68",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:50",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:66",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:48",
+        "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:clause:28"
+      ]
+    },
+    {
+      "query_id": "q013",
+      "clause_type": "No-Solicit Of Employees",
+      "doc_id": "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 0.4476744186046512,
+      "top_chunk_ids": [
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:57",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:55",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:51",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:48",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:2"
+      ]
+    },
+    {
+      "query_id": "q014",
+      "clause_type": "Rofr/Rofo/Rofn",
+      "doc_id": "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.041666666666666664,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:62",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:75",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:46",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:74",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:48"
+      ]
+    },
+    {
+      "query_id": "q015",
+      "clause_type": "Termination For Convenience",
+      "doc_id": "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 0.445141065830721,
+      "top_chunk_ids": [
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:31",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:32",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:38",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:37",
+        "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:clause:35"
+      ]
+    },
+    {
+      "query_id": "q016",
+      "clause_type": "License Grant",
+      "doc_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement",
+      "precision@5": 0.4,
+      "recall@10": 0.5,
+      "mrr": 0.25,
+      "span_coverage@5": 0.36378691691967985,
+      "top_chunk_ids": [
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:65",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:57",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:74",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:48",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:15"
+      ]
+    },
+    {
+      "query_id": "q017",
+      "clause_type": "Termination For Convenience",
+      "doc_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:64",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:65",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:66",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:25",
+        "bioceptinc-08-19-2013-ex-10-collaboration-agreement:clause:79"
+      ]
+    },
+    {
+      "query_id": "q018",
+      "clause_type": "Minimum Commitment",
+      "doc_id": "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement",
+      "precision@5": 0.0,
+      "recall@10": 1.0,
+      "mrr": 0.125,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:19",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:38",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:22",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:32",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:31"
+      ]
+    },
+    {
+      "query_id": "q019",
+      "clause_type": "Notice Period To Terminate Renewal",
+      "doc_id": "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:32",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:31",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:13",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:8",
+        "bnlfinancialcorp-03-30-2007-ex-10-8-outsourcing-agreement:clause:38"
+      ]
+    },
+    {
+      "query_id": "q020",
+      "clause_type": "Cap On Liability",
+      "doc_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "span_coverage@5": 0.6742364917776038,
+      "top_chunk_ids": [
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:17",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:13",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:11",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:12",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:14"
+      ]
+    },
+    {
+      "query_id": "q021",
+      "clause_type": "Governing Law",
+      "doc_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:11",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:16",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:0",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:2",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:10"
+      ]
+    },
+    {
+      "query_id": "q022",
+      "clause_type": "Notice Period To Terminate Renewal",
+      "doc_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:12",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:13",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:0",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:6",
+        "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:clause:10"
+      ]
+    },
+    {
+      "query_id": "q023",
+      "clause_type": "Ip Ownership Assignment",
+      "doc_id": "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement",
+      "precision@5": 0.4,
+      "recall@10": 0.6666666666666666,
+      "mrr": 1.0,
+      "span_coverage@5": 0.716676810712112,
+      "top_chunk_ids": [
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:5",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:6",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:9",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:3",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:7"
+      ]
+    },
+    {
+      "query_id": "q024",
+      "clause_type": "No-Solicit Of Employees",
+      "doc_id": "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:12",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:10",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:9",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:13",
+        "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:clause:14"
+      ]
+    },
+    {
+      "query_id": "q025",
+      "clause_type": "Cap On Liability",
+      "doc_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 0.25,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:17",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:23",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:24",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:21",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:20"
+      ]
+    },
+    {
+      "query_id": "q026",
+      "clause_type": "Change Of Control",
+      "doc_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra",
+      "precision@5": 0.0,
+      "recall@10": 1.0,
+      "mrr": 0.1111111111111111,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:18",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:17",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:38",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:19",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:25"
+      ]
+    },
+    {
+      "query_id": "q027",
+      "clause_type": "Governing Law",
+      "doc_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:39",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:32",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:38",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:21",
+        "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:clause:20"
+      ]
+    },
+    {
+      "query_id": "q028",
+      "clause_type": "Cap On Liability",
+      "doc_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:44",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:38",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:49",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:33",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:32"
+      ]
+    },
+    {
+      "query_id": "q029",
+      "clause_type": "Governing Law",
+      "doc_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:48",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:30",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:50",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:28",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:45"
+      ]
+    },
+    {
+      "query_id": "q030",
+      "clause_type": "Ip Ownership Assignment",
+      "doc_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.045454545454545456,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:27",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:39",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:41",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:28",
+        "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:clause:36"
+      ]
+    },
+    {
+      "query_id": "q031",
+      "clause_type": "Exclusivity",
+      "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+      "precision@5": 0.2,
+      "recall@10": 0.5,
+      "mrr": 1.0,
+      "span_coverage@5": 0.5234521575984991,
+      "top_chunk_ids": [
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:29",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:62",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:40",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:28",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:68"
+      ]
+    },
+    {
+      "query_id": "q032",
+      "clause_type": "Non-Compete",
+      "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:27",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:29",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:32",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:28",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:30"
+      ]
+    },
+    {
+      "query_id": "q033",
+      "clause_type": "Rofr/Rofo/Rofn",
+      "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+      "precision@5": 0.4,
+      "recall@10": 0.6666666666666666,
+      "mrr": 1.0,
+      "span_coverage@5": 0.6504854368932039,
+      "top_chunk_ids": [
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:48",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:49",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:32",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:0",
+        "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:clause:80"
+      ]
+    },
+    {
+      "query_id": "q034",
+      "clause_type": "Non-Compete",
+      "doc_id": "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br",
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.045454545454545456,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:45",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:69",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:54",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:1",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:63"
+      ]
+    },
+    {
+      "query_id": "q035",
+      "clause_type": "Uncapped Liability",
+      "doc_id": "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br",
+      "precision@5": 0.2,
+      "recall@10": 0.5,
+      "mrr": 0.5,
+      "span_coverage@5": 0.6303270564915758,
+      "top_chunk_ids": [
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:47",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:59",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:37",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:51",
+        "leadersonlineinc-20000427-s-1a-ex-10-8-4991089-ex-10-8-co-br:clause:48"
+      ]
+    },
+    {
+      "query_id": "q036",
+      "clause_type": "Most Favored Nation",
+      "doc_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement",
+      "precision@5": 0.0,
+      "recall@10": 1.0,
+      "mrr": 0.1,
+      "span_coverage@5": 0.0,
+      "top_chunk_ids": [
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:63",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:58",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:40",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:45",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:41"
+      ]
+    },
+    {
+      "query_id": "q037",
+      "clause_type": "Renewal Term",
+      "doc_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:10",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:11",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:9",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:29",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:19"
+      ]
+    },
+    {
+      "query_id": "q038",
+      "clause_type": "Rofr/Rofo/Rofn",
+      "doc_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement",
+      "precision@5": 0.2,
+      "recall@10": 0.5,
+      "mrr": 0.5,
+      "span_coverage@5": 0.5180102915951973,
+      "top_chunk_ids": [
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:40",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:36",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:64",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:62",
+        "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:clause:63"
+      ]
+    },
+    {
+      "query_id": "q039",
+      "clause_type": "Governing Law",
+      "doc_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:32",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:29",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:31",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:33",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:28"
+      ]
+    },
+    {
+      "query_id": "q040",
+      "clause_type": "License Grant",
+      "doc_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:24",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:33",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:32",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:25",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:30"
+      ]
+    },
+    {
+      "query_id": "q041",
+      "clause_type": "Uncapped Liability",
+      "doc_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:29",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:23",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:30",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:33",
+        "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:clause:28"
+      ]
+    },
+    {
+      "query_id": "q042",
+      "clause_type": "Cap On Liability",
+      "doc_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 0.6432350718065004,
+      "top_chunk_ids": [
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:29",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:32",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:39",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:28",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:37"
+      ]
+    },
+    {
+      "query_id": "q043",
+      "clause_type": "Irrevocable Or Perpetual License",
+      "doc_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 0.636968085106383,
+      "top_chunk_ids": [
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:15",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:18",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:3",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:35",
+        "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:clause:24"
+      ]
+    },
+    {
+      "query_id": "q044",
+      "clause_type": "No-Solicit Of Employees",
+      "doc_id": "quaker-chemical-corporation-non-competition-and-non-solicita",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:6",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:12",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:5",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:10",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:7"
+      ]
+    },
+    {
+      "query_id": "q045",
+      "clause_type": "Non-Compete",
+      "doc_id": "quaker-chemical-corporation-non-competition-and-non-solicita",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:12",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:5",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:6",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:7",
+        "quaker-chemical-corporation-non-competition-and-non-solicita:clause:2"
+      ]
+    },
+    {
+      "query_id": "q046",
+      "clause_type": "Insurance",
+      "doc_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 0.830949948927477,
+      "top_chunk_ids": [
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:19",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:26",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:31",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:35",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:27"
+      ]
+    },
+    {
+      "query_id": "q047",
+      "clause_type": "Irrevocable Or Perpetual License",
+      "doc_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:3",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:5",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:23",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:21",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:35"
+      ]
+    },
+    {
+      "query_id": "q048",
+      "clause_type": "Post-Termination Services",
+      "doc_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem",
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "mrr": 0.25,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:23",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:21",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:34",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:22",
+        "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:clause:18"
+      ]
+    },
+    {
+      "query_id": "q049",
+      "clause_type": "Audit Rights",
+      "doc_id": "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc",
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 1.0,
+      "top_chunk_ids": [
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:40",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:39",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:16",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:58",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:12"
+      ]
+    },
+    {
+      "query_id": "q050",
+      "clause_type": "Insurance",
+      "doc_id": "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc",
+      "precision@5": 0.6,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "span_coverage@5": 0.39258010118043846,
+      "top_chunk_ids": [
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:46",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:45",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:42",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:64",
+        "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:clause:44"
+      ]
+    }
+  ]
+}
