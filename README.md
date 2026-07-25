@@ -96,7 +96,7 @@ run_eval.py         entrypoint
 results/report.md   generated
 ```
 
-`data/prepare.py` verifies the CUAD checksum, asserts every gold span slices back to its own annotated text, and fails loudly rather than let a bad offset reach the metrics. Regenerating with the default seed reproduces the committed eval set byte for byte.
+`data/prepare.py` verifies the CUAD checksum, asserts every gold span slices back to its own annotated text, and fails loudly rather than let a bad offset reach the metrics. Regenerating with the default seed reproduces the committed eval set exactly, apart from the `generated_utc` timestamp in `meta` — after a rerun, `git diff data/eval_set.json` shows that single line.
 
 ## Data
 

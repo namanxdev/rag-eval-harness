@@ -243,7 +243,7 @@ def write_report(results: list[Result], eval_set: dict, out_dir: Path,
         f"- Source: {src['dataset']}, {src['license']}, (c) {src['attribution']}.",
         f"- `{src['file']}` sha256 `{src['sha256']}`.",
         f"- Eval set built by `data/prepare.py` with seed {meta['sampling']['seed']}; "
-        "regenerating it reproduces this set exactly.",
+        "rerunning it selects the same documents and queries.",
         "",
     ]
 

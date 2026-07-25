@@ -1,6 +1,6 @@
 # Retrieval evaluation: naive vs clause-aware chunking
 
-Generated 2026-07-25 11:41 UTC by `run_eval.py`.
+Generated 2026-07-25 11:48 UTC by `run_eval.py`.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Generated 2026-07-25 11:41 UTC by `run_eval.py`.
 - **Ranking depth**: 30 chunks per query, retrieved from within the contract the question is asked of (a Qdrant payload filter on `doc_id`). CUAD's questions are templated per clause type and worded identically for every contract, so a corpus-wide search is unanswerable by construction.
 
 ## Results
-
+```
 | config           | chunks | median chars |        precision@5 |          recall@10 |                mrr |    span_coverage@5 |
 |------------------|--------|--------------|--------------------|--------------------|--------------------|--------------------|
 | naive            |   1103 |         1000 |              0.276 |              0.751 |              0.607 |              0.705 |
@@ -68,4 +68,4 @@ Only 1-4 queries per clause type, so read these as texture rather than evidence;
 
 - Source: CUAD v1 (Contract Understanding Atticus Dataset), CC BY 4.0, (c) The Atticus Project, Inc..
 - `CUADv1.json` sha256 `ed0b77d85bdf4014d7495800e8e4a70565b48ee6f8a2e5dca9cf8655dbf10eae`.
-- Eval set built by `data/prepare.py` with seed 42; regenerating it reproduces this set exactly.
+- Eval set built by `data/prepare.py` with seed 42; rerunning it selects the same documents and queries.
