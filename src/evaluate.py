@@ -84,19 +84,10 @@ def chunk_stats(chunks: list[Chunk], queries: list[dict]) -> dict[str, float]:
     }
 
 
-def run_config(cfg: Config, eval_set: dict, encoder: Encoder,
-               reranker: Reranker | None, client: QdrantClient,
-               verbose: bool = True) -> Result:
-    documents, queries = eval_set["documents"], eval_set["queries"]
-
-    chunks = chunk_documents(documents, cfg.strategy)
-    stats = chunk_stats(chunks, queries)
-    if verbose:
-        print(f"  {cfg.name}: {stats['n_chunks']} chunks, median {stats['median_chars']} chars, "
-              f"{stats['spans_in_one_chunk']:.1%} of gold spans intact in one chunk")
-
-    index = ChunkIndex(chunks, encoder, collection=f"chunks_{cfg.strategy}",
-                       client=client, progress=verbose)
+def run_config(cfg: Config, eval_set: dict, reranker: Reranker | None,
+               index: ChunkIndex, stats: dict[str, float]) -> Result:
+    queries = eval_set["queries"]
+    chunks = index.chunks
 
     rows = []
     for q in queries:
@@ -127,13 +118,34 @@ def run_config(cfg: Config, eval_set: dict, encoder: Encoder,
 def run_all(eval_set: dict, encoder: Encoder, reranker: Reranker | None,
             configs: list[Config] = CONFIGS, verbose: bool = True) -> list[Result]:
     client = QdrantClient(":memory:")
+    indexes: dict[str, tuple[ChunkIndex, dict[str, float]]] = {}
     results = []
+
     for cfg in configs:
         if cfg.rerank and reranker is None:
             if verbose:
                 print(f"  skipping {cfg.name}: reranking disabled")
             continue
-        results.append(run_config(cfg, eval_set, encoder, reranker, client, verbose))
+
+        # Configs that share a chunking strategy share its index; embedding the
+        # same chunks twice would double the cost of every run.
+        if cfg.strategy not in indexes:
+            chunks = chunk_documents(eval_set["documents"], cfg.strategy)
+            stats = chunk_stats(chunks, eval_set["queries"])
+            stats["truncated"] = encoder.truncated_fraction([c.text for c in chunks])
+            if verbose:
+                print(f"  {cfg.strategy}: {stats['n_chunks']} chunks, "
+                      f"median {stats['median_chars']} chars, "
+                      f"{stats['spans_in_one_chunk']:.1%} of gold spans intact in one chunk, "
+                      f"{stats['truncated']:.1%} truncated at {encoder.max_tokens} tokens")
+            indexes[cfg.strategy] = (
+                ChunkIndex(chunks, encoder, collection=f"chunks_{cfg.strategy}",
+                           client=client, progress=verbose),
+                stats,
+            )
+
+        index, stats = indexes[cfg.strategy]
+        results.append(run_config(cfg, eval_set, reranker, index, stats))
     return results
 
 
@@ -194,8 +206,9 @@ def write_report(results: list[Result], eval_set: dict, out_dir: Path,
         "Both columns below are fixed before a single query runs.",
         "",
         "| strategy | chunks | median chars | gold spans intact in one chunk | "
-        "relevant chunks per query | ceiling on precision@5 |",
-        "|---|---|---|---|---|---|",
+        f"truncated at {encoder.max_tokens} tokens | relevant chunks per query | "
+        "ceiling on precision@5 |",
+        "|---|---|---|---|---|---|---|",
     ]
     seen = set()
     for r in results:
@@ -204,8 +217,8 @@ def write_report(results: list[Result], eval_set: dict, out_dir: Path,
         seen.add(r.config.strategy)
         s = r.stats
         lines.append(f"| {r.config.strategy} | {s['n_chunks']} | {s['median_chars']} "
-                     f"| {s['spans_in_one_chunk']:.1%} | {s['relevant_per_query']:.2f} "
-                     f"| {s['precision_ceiling']:.3f} |")
+                     f"| {s['spans_in_one_chunk']:.1%} | {s['truncated']:.1%} "
+                     f"| {s['relevant_per_query']:.2f} | {s['precision_ceiling']:.3f} |")
 
     ceilings = {r.config.strategy: r.stats["precision_ceiling"] for r in results}
     attained = {r.config.name: r.aggregates[f"precision@{P_AT}"] /

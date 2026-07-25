@@ -29,6 +29,10 @@ def main() -> None:
     p.add_argument("--results", type=Path, default=ROOT / "results")
     p.add_argument("--embed-model", default=EMBED_MODEL)
     p.add_argument("--rerank-model", default=RERANK_MODEL)
+    p.add_argument("--query-prefix", default=None,
+                   help="instruction prepended to queries only. Defaults to BGE's "
+                        "recommended prefix for bge* models and none otherwise; "
+                        "pass '' to disable.")
     p.add_argument("--no-rerank", action="store_true", help="skip the cross-encoder stage")
     p.add_argument("--quiet", action="store_true")
     args = p.parse_args()
@@ -48,7 +52,7 @@ def main() -> None:
         print(f"loading models ({args.embed_model}"
               f"{'' if args.no_rerank else ', ' + args.rerank_model})...")
 
-    encoder = Encoder(args.embed_model)
+    encoder = Encoder(args.embed_model, query_prefix=args.query_prefix)
     reranker = None if args.no_rerank else Reranker(args.rerank_model)
 
     results = run_all(eval_set, encoder, reranker, verbose=verbose)

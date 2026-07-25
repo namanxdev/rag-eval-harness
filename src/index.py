@@ -17,16 +17,27 @@ from src.chunking import Chunk
 EMBED_MODEL = "all-MiniLM-L6-v2"     # 384-dim, ~90 MB, CPU-friendly
 
 
+# BGE retrieval models are trained with an instruction on the query side only;
+# the documentation is explicit that omitting it costs retrieval accuracy, and
+# that passages must NOT carry it.
+BGE_QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
+
+
 class Encoder:
     """Wraps the embedding model so it is loaded once and reused per strategy."""
 
-    def __init__(self, model_name: str = EMBED_MODEL):
+    def __init__(self, model_name: str = EMBED_MODEL, query_prefix: str | None = None):
         self.model_name = model_name
         self.model = SentenceTransformer(model_name)
         # renamed in sentence-transformers 5; the old name warns but still works
         get_dim = getattr(self.model, "get_embedding_dimension", None) \
             or self.model.get_sentence_embedding_dimension
         self.dim = get_dim()
+        self.max_tokens = self.model.max_seq_length
+        self.query_prefix = (
+            BGE_QUERY_PREFIX if query_prefix is None and "bge" in model_name.lower()
+            else (query_prefix or "")
+        )
 
     def encode(self, texts: list[str], batch_size: int = 64, progress: bool = False) -> np.ndarray:
         return self.model.encode(
@@ -36,6 +47,19 @@ class Encoder:
             show_progress_bar=progress,
             convert_to_numpy=True,
         )
+
+    def encode_query(self, query: str) -> np.ndarray:
+        return self.encode([self.query_prefix + query])[0]
+
+    def truncated_fraction(self, texts: list[str]) -> float:
+        """Share of texts the model will silently cut off at max_seq_length.
+
+        Worth reporting: it is not uniform across chunking strategies. Variable
+        length clause chunks overrun a short context far more often than fixed
+        windows do, which quietly penalises the strategy under test.
+        """
+        tok = self.model.tokenizer
+        return sum(len(tok.encode(t)) > self.max_tokens for t in texts) / len(texts)
 
 
 class ChunkIndex:
@@ -86,7 +110,7 @@ class ChunkIndex:
         So retrieval is scoped with a payload filter, which is also how a real
         contract-review system narrows to the document under review.
         """
-        vec = self.encoder.encode([query])[0]
+        vec = self.encoder.encode_query(query)
         flt = None
         if doc_id is not None:
             flt = models.Filter(must=[models.FieldCondition(
