@@ -1,0 +1,6 @@
+# Core harness. Everything runs locally on CPU; no API keys are required.
+qdrant-client>=1.9,<2
+sentence-transformers>=3.0,<6
+numpy>=1.26
+
+# ragas is deliberately not listed; see "RAGAS is not wired in" in the README.

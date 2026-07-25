@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+# CUAD raw corpus (40 MB); re-fetch with `python data/prepare.py --download`.
+# data/eval_set.json IS committed -- it is the reproducible artifact.
+data/CUADv1.json
+data/raw/
