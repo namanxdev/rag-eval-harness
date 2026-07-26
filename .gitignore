@@ -13,3 +13,7 @@ wheels/
 # data/eval_set.json IS committed -- it is the reproducible artifact.
 data/CUADv1.json
 data/raw/
+
+# Side-experiment output from `--results <dir>` runs (model comparisons, etc).
+# results/ (no suffix) is the one committed run and stays tracked.
+results_*/

@@ -1,6 +1,6 @@
 # Retrieval evaluation: naive vs clause-aware chunking
 
-Generated 2026-07-25 11:48 UTC by `run_eval.py`.
+Generated 2026-07-25 11:53 UTC by `run_eval.py`.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Generated 2026-07-25 11:48 UTC by `run_eval.py`.
 - **Ranking depth**: 30 chunks per query, retrieved from within the contract the question is asked of (a Qdrant payload filter on `doc_id`). CUAD's questions are templated per clause type and worded identically for every contract, so a corpus-wide search is unanswerable by construction.
 
 ## Results
-```
+
 | config           | chunks | median chars |        precision@5 |          recall@10 |                mrr |    span_coverage@5 |
 |------------------|--------|--------------|--------------------|--------------------|--------------------|--------------------|
 | naive            |   1103 |         1000 |              0.276 |              0.751 |              0.607 |              0.705 |
@@ -23,10 +23,10 @@ Generated 2026-07-25 11:48 UTC by `run_eval.py`.
 
 Both columns below are fixed before a single query runs.
 
-| strategy | chunks | median chars | gold spans intact in one chunk | relevant chunks per query | ceiling on precision@5 |
-|---|---|---|---|---|---|
-| naive | 1103 | 1000 | 43.0% | 2.70 | 0.504 |
-| clause | 972 | 797 | 99.1% | 1.58 | 0.312 |
+| strategy | chunks | median chars | gold spans intact in one chunk | truncated at 256 tokens | relevant chunks per query | ceiling on precision@5 |
+|---|---|---|---|---|---|---|
+| naive | 1103 | 1000 | 43.0% | 1.8% | 2.70 | 0.504 |
+| clause | 972 | 797 | 99.1% | 30.6% | 1.58 | 0.312 |
 
 The last column is why precision@5 must not be read as a ranking of the strategies. Larger chunks overlap more gold spans, so more chunks count as relevant, so precision@5 can climb without a single extra gold character being retrieved. As a share of its own ceiling, each config attained:
 

@@ -81,6 +81,8 @@ The tuned pattern finds 1001 headers across the 20 contracts, leaving 2 with no 
 
 **Retrieval is scoped to the correct document**, so this measures clause localization *within* a contract. It does not measure document routing across a corpus, which a production system would also need.
 
+**Bigger models were tried and didn't win.** `BAAI/bge-base-en-v1.5` and `BAAI/bge-large-en-v1.5` (up to 15x the parameters of `all-MiniLM-L6-v2`) were swapped in as the embedder; on the clause config, bge-large edged out MiniLM (MRR 0.648 vs 0.641, recall@10 0.840 vs 0.800) but not by more than 50 queries can distinguish from noise, and it made naive chunking *worse*. `cross-encoder/ms-marco-MiniLM-L-12-v2` and `BAAI/bge-reranker-base` were swapped in as the reranker; `bge-reranker-base` was worse across every metric, and L12 traded a small precision/coverage gain for a worse MRR (0.580 vs 0.617) at 2.6x the size. The committed defaults are the smallest models tried, not merely the first ones tried.
+
 **RAGAS is not wired in.** The intent was `IDBasedContextRecall` as a key-free cross-check, but `ragas==0.4.3` fails on import against current `langchain-community` (`ModuleNotFoundError: langchain_community.chat_models.vertexai`). Rather than pin a stale dependency tree or ship an unverified code path, it is left out. The metric it provides would duplicate `recall@k` in `src/metrics.py`, which is computed here directly from chunk IDs.
 
 ## Layout
