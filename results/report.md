@@ -1,6 +1,6 @@
 # Retrieval evaluation: naive vs clause-aware chunking
 
-Generated 2026-07-25 11:53 UTC by `run_eval.py`.
+Generated 2026-07-30 16:16 UTC by `run_eval.py`.
 
 ## Setup
 

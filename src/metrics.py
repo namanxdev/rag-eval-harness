@@ -1,9 +1,15 @@
 """Retrieval metrics computed against character-level gold spans.
 
 A chunk counts as relevant when it comes from the right document AND overlaps
-at least one gold span. The document check matters because retrieval here runs
-across the whole corpus, not within a single contract: a chunk whose offsets
-happen to overlap the gold range of a *different* contract is not a hit.
+at least one gold span.
+
+Retrieval is scoped to the contract each question is asked of (a Qdrant payload
+filter on `doc_id` -- see `src/index.py`), so in a normal run every candidate
+already comes from the right document and the `doc_id` check never fires. It is
+kept as a guard: if that filter is ever dropped, or an eval set is regenerated
+with different filters, a chunk whose offsets happen to overlap the gold range
+of a *different* contract must not count as a hit. Character offsets are only
+meaningful relative to the document they came from.
 """
 
 from __future__ import annotations
@@ -24,12 +30,15 @@ def precision_at_k(retrieved: list[Chunk], doc_id: str, gold: list[Span], k: int
 
 def recall_at_k(retrieved: list[Chunk], doc_id: str, gold: list[Span],
                 all_chunks: list[Chunk], k: int) -> float | None:
-    """Share of all relevant chunks in the corpus that made the top k.
+    """Share of all relevant chunks that made the top k.
 
-    Returns None when no chunk in the corpus is relevant, which would otherwise
-    score a misleading 0. That cannot happen with the shipped eval set -- every
-    query has a gold span inside its document -- but it guards anyone who
-    regenerates the set with different filters.
+    Only chunks from the query's own document can be relevant, so the
+    denominator is every relevant chunk in that contract.
+
+    Returns None when nothing is relevant at all, which would otherwise score a
+    misleading 0. That cannot happen with the shipped eval set -- every query
+    has a gold span inside its document -- but it guards anyone who regenerates
+    the set with different filters.
     """
     total = sum(is_relevant(c, doc_id, gold) for c in all_chunks)
     if total == 0:
