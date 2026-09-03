@@ -14,6 +14,7 @@ from src.chunking import Chunk, chunk_documents
 from src.index import ChunkIndex, Encoder
 from src.metrics import (
     complete_grounding_at_k,
+    is_relevant,
     mrr,
     precision_at_k,
     recall_at_k,
@@ -21,7 +22,8 @@ from src.metrics import (
     span_recall_at_k,
     uncovered_spans,
 )
-from src.retrieve import Reranker, retrieve
+from src.retrieve import Reranker, retrieve_ranked
+from src.sparse import BM25Index
 
 # One ranked list per query, scored at several depths. Every config shares the
 # same depth so the only difference between them is chunking and ordering.
@@ -59,12 +61,19 @@ class Config:
     strategy: str
     rerank: bool
     description: str = ""
+    retriever: str = "dense"     # "dense" | "bm25" | "hybrid" -- see src/sparse.py
 
 
 CONFIGS = [
     Config("naive", "naive", False, "fixed 1000-char windows, 150 overlap"),
     Config("clause", "clause", False, "structural clause boundaries"),
     Config("clause + rerank", "clause", True, "clause boundaries, cross-encoder rerank of top 30"),
+    Config("clause + bm25", "clause", False, "lexical BM25 only, no embeddings",
+           retriever="bm25"),
+    Config("clause + hybrid", "clause", False, "dense + BM25 fused with RRF",
+           retriever="hybrid"),
+    Config("clause + hybrid + rerank", "clause", True,
+           "dense + BM25 fused, then cross-encoder rerank", retriever="hybrid"),
 ]
 
 
@@ -115,7 +124,8 @@ def chunk_stats(chunks: list[Chunk], queries: list[dict]) -> dict[str, float]:
 
 
 def run_config(cfg: Config, eval_set: dict, reranker: Reranker | None,
-               index: ChunkIndex, stats: dict[str, float]) -> Result:
+               index: ChunkIndex, stats: dict[str, float],
+               sparse: BM25Index | None = None) -> Result:
     queries = eval_set["queries"]
     chunks = index.chunks
 
@@ -124,9 +134,11 @@ def run_config(cfg: Config, eval_set: dict, reranker: Reranker | None,
     rows = []
     for q in queries:
         gold = [tuple(s) for s in q["gold_spans"]]
-        ranked = retrieve(index, q["query"], RANK_DEPTH, doc_id=q["doc_id"],
-                          reranker=reranker if cfg.rerank else None,
-                          candidate_k=RANK_DEPTH)
+        ranking = retrieve_ranked(index, q["query"], RANK_DEPTH, doc_id=q["doc_id"],
+                                  reranker=reranker if cfg.rerank else None,
+                                  candidate_k=RANK_DEPTH,
+                                  sparse=sparse, retriever=cfg.retriever)
+        ranked = ranking.chunks
         row = {
             "query_id": q["query_id"],
             "clause_type": q["clause_type"],
@@ -154,6 +166,16 @@ def run_config(cfg: Config, eval_set: dict, reranker: Reranker | None,
                     ranked, q["doc_id"], gold, GROUNDING_AT, GROUNDING_THRESHOLD)
             ]
 
+        # Which retriever surfaced each relevant chunk that made the cut. This
+        # is what backs "here are the queries dense retrieval alone gets
+        # wrong" -- an aggregate delta cannot name a query.
+        if ranking.sources:
+            row["relevant_chunk_sources"] = {
+                c.chunk_id: ranking.sources.get(c.chunk_id, {})
+                for c in ranked[:GROUNDING_AT]
+                if is_relevant(c, q["doc_id"], gold)
+            }
+
         rows.append(row)
 
     aggregates = {}
@@ -169,7 +191,7 @@ def run_config(cfg: Config, eval_set: dict, reranker: Reranker | None,
 def run_all(eval_set: dict, encoder: Encoder, reranker: Reranker | None,
             configs: list[Config] = CONFIGS, verbose: bool = True) -> list[Result]:
     client = QdrantClient(":memory:")
-    indexes: dict[str, tuple[ChunkIndex, dict[str, float]]] = {}
+    indexes: dict[str, tuple[ChunkIndex, BM25Index, dict[str, float]]] = {}
     results = []
 
     for cfg in configs:
@@ -192,11 +214,12 @@ def run_all(eval_set: dict, encoder: Encoder, reranker: Reranker | None,
             indexes[cfg.strategy] = (
                 ChunkIndex(chunks, encoder, collection=f"chunks_{cfg.strategy}",
                            client=client, progress=verbose),
+                BM25Index(chunks),
                 stats,
             )
 
-        index, stats = indexes[cfg.strategy]
-        results.append(run_config(cfg, eval_set, reranker, index, stats))
+        index, sparse, stats = indexes[cfg.strategy]
+        results.append(run_config(cfg, eval_set, reranker, index, stats, sparse))
     return results
 
 
