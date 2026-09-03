@@ -2,5 +2,9 @@
 qdrant-client>=1.9,<2
 sentence-transformers>=3.0,<6
 numpy>=1.26
+rank-bm25>=0.2,<1        # sparse retrieval for the hybrid configs
+pypdf>=4.0,<8            # PDF text extraction in data/adapt.py
 
 # ragas is deliberately not listed; see "RAGAS is not wired in" in the README.
+
+# Tests: pip install -r requirements-dev.txt
