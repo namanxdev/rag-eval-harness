@@ -129,6 +129,36 @@ Give `gold_texts` and the adapter locates each one; give `gold_spans` and it use
 
 Two things are enforced rather than trusted. The scope caps (250 documents, 2 GB) exit non-zero with the actual counts. And extraction is recorded: `meta.source` carries the extractor, its version, and a sha256 of every extracted document, because gold span offsets are only valid against the exact text that produced them and re-extracting with a different library invalidates every judgment silently otherwise.
 
+## What a run produces
+
+`python run_eval.py` writes four files. Two are for whoever is changing the harness, two are the engagement deliverable.
+
+| file | for | contents |
+|---|---|---|
+| `results/report.md` | developer | every config, the chunking table, attained-vs-ceiling precision, mean MRR by clause type, provenance |
+| `results/client_report.md` | client | baseline → failure patterns → fix backlog → scope |
+| `results/per_query.json` | audit | per-query metrics, the full 30-deep ranking, `missed_spans`, and which retriever surfaced each relevant chunk |
+| `results/taxonomy.json` | audit | one label per failing query with the evidence that produced it |
+
+The client report is four sections and nothing else: where retrieval stands today, the top failure patterns with two real queries and the text of the clauses they missed, a fix backlog ranked by how many failing questions each lever accounts for, and a scope statement of what was and was not covered.
+
+Its one governing rule is that **no number appears in it that was not produced by a run in this repo.** The backlog decides which lever a delta belongs to by diffing the two configs, so a change cannot be attributed to a lever that was not actually moved, and a config that changes two things at once is excluded from both. Where no pair of configs isolated a lever, the entry reads *not measured* rather than carrying an estimate. `--baseline <config>` picks which config stands in for the client's current setup; it defaults to the first one run.
+
+## Tests
+
+```bash
+pytest          # 87 tests, ~25s, no model weights loaded
+```
+
+A repo whose entire pitch is measurement rigour had no tests. These are the ones that would catch a wrong number rather than a crash:
+
+- **The metric divergence itself** — that pooled coverage and complete grounding disagree on `q001` in both directions, since a metric that never diverges from the one it replaces is not worth adding.
+- **Adapter round trip** — CUAD's own 20 documents and 50 queries pushed back through `data/adapt.py` come out as an equivalent eval set, asserted field by field.
+- **Taxonomy partition** — labels re-derived from the committed `results/per_query.json` must cover the failing set exactly, once each. Chunking is pure Python, so this runs without an embedding model and a client can reproduce it from two committed files.
+- **Label ordering** — a query satisfying two conditions takes the earlier one, and a split-but-retrieved clause is not blamed for a failure it did not cause.
+- **The dense path is unchanged** — `retrieve()` with no sparse index issues the identical single search it did before hybrid retrieval existed.
+- **Backlog attribution** — a config that moves two levers cannot lend its delta to either, and a lever that made things worse reports a negative number rather than being dropped.
+
 ## Limitations
 
 **Precision@k is not comparable across chunking strategies.** The number of gold-relevant chunks depends on how the document was split, so a strategy producing larger chunks can inflate precision without retrieving one extra character of the answer. That is not hypothetical here — it is exactly what the table shows. Naive chunking makes 2.70 chunks relevant per query against clause-aware's 1.58, which caps precision@5 at 0.504 versus 0.312. Measured against its own ceiling, clause-aware attains **66.7%** and naive **54.8%**: the strategy that looks worse on the raw metric is the more precise one. Span coverage is reported alongside as a chunking-invariant measure, since it counts gold characters rather than chunks. Recall@k inherits the same flaw in its denominator, and should be read the same way.
