@@ -46,6 +46,17 @@ FIX_FOR = {
     "partial-grounding": "metadata filtering, k tuning",
 }
 
+# The same fixes as a controlled vocabulary, so the backlog can match a label
+# against the config that actually measured that lever instead of guessing from
+# prose. `None` where no config could change the outcome.
+LEVER = {
+    "ceiling-bound": None,
+    "chunk-severance": "chunking",
+    "retrieval-miss": "hybrid retrieval",
+    "rank-miss": "reranking",
+    "partial-grounding": "metadata filtering",
+}
+
 LABEL_ORDER = list(FIX_FOR)
 
 # How much of a missed clause to carry into the evidence.

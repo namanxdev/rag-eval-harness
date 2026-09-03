@@ -108,6 +108,10 @@ class Result:
     stats: dict[str, float]
     aggregates: dict[str, float] = field(default_factory=dict)
     per_query: list[dict] = field(default_factory=list)
+    # The index this config was scored against. The failure taxonomy needs the
+    # full chunk list to tell "never retrieved" from "ranked too low", and it
+    # must be the same chunks, not a rebuild that might have drifted.
+    index: ChunkIndex | None = None
 
 
 def chunk_stats(chunks: list[Chunk], queries: list[dict]) -> dict[str, float]:
@@ -212,7 +216,7 @@ def run_config(cfg: Config, eval_set: dict, reranker: Reranker | None,
         vals = [r[key] for r in rows if r[key] is not None]
         aggregates[key] = statistics.mean(vals) if vals else float("nan")
 
-    return Result(cfg, stats, aggregates, rows)
+    return Result(cfg, stats, aggregates, rows, index)
 
 
 def run_all(eval_set: dict, encoder: Encoder, reranker: Reranker | None,
