@@ -62,6 +62,12 @@ class Config:
     rerank: bool
     description: str = ""
     retriever: str = "dense"     # "dense" | "bm25" | "hybrid" -- see src/sparse.py
+    # Both filters are levers under test, not fixed plumbing. `doc_filter`
+    # scopes retrieval to the document a question is asked of; `metadata_filter`
+    # applies whatever a query declared in its optional `filters` field. Turning
+    # either off is how the harness measures what it was worth.
+    doc_filter: bool = True
+    metadata_filter: bool = True
 
 
 CONFIGS = [
@@ -74,7 +80,26 @@ CONFIGS = [
            retriever="hybrid"),
     Config("clause + hybrid + rerank", "clause", True,
            "dense + BM25 fused, then cross-encoder rerank", retriever="hybrid"),
+    Config("clause, unfiltered", "clause", False,
+           "no document scoping: what the metadata filter is worth",
+           doc_filter=False),
 ]
+
+# Document fields that describe the eval set itself rather than the document.
+# Everything else a document declares becomes filterable payload.
+DOC_RESERVED = frozenset({"doc_id", "title", "n_chars", "text"})
+
+
+def document_metadata(documents: list[dict]) -> dict[str, dict]:
+    """Per-document metadata to index alongside each chunk.
+
+    CUAD documents declare nothing beyond the reserved fields, so this is empty
+    on the reference corpus and the payload is unchanged. Client corpora carry
+    effective date, entity, document type, version; `data/adapt.py` passes them
+    through, and a query filters on them via its `filters` field.
+    """
+    return {d["doc_id"]: {k: v for k, v in d.items() if k not in DOC_RESERVED}
+            for d in documents}
 
 
 @dataclass
@@ -134,10 +159,12 @@ def run_config(cfg: Config, eval_set: dict, reranker: Reranker | None,
     rows = []
     for q in queries:
         gold = [tuple(s) for s in q["gold_spans"]]
-        ranking = retrieve_ranked(index, q["query"], RANK_DEPTH, doc_id=q["doc_id"],
+        ranking = retrieve_ranked(index, q["query"], RANK_DEPTH,
+                                  doc_id=q["doc_id"] if cfg.doc_filter else None,
                                   reranker=reranker if cfg.rerank else None,
                                   candidate_k=RANK_DEPTH,
-                                  sparse=sparse, retriever=cfg.retriever)
+                                  sparse=sparse, retriever=cfg.retriever,
+                                  where=q.get("filters") if cfg.metadata_filter else None)
         ranked = ranking.chunks
         row = {
             "query_id": q["query_id"],
@@ -204,6 +231,7 @@ def run_all(eval_set: dict, encoder: Encoder, reranker: Reranker | None,
         # same chunks twice would double the cost of every run.
         if cfg.strategy not in indexes:
             chunks = chunk_documents(eval_set["documents"], cfg.strategy)
+            meta = document_metadata(eval_set["documents"])
             stats = chunk_stats(chunks, eval_set["queries"])
             stats["truncated"] = encoder.truncated_fraction([c.text for c in chunks])
             if verbose:
@@ -213,8 +241,8 @@ def run_all(eval_set: dict, encoder: Encoder, reranker: Reranker | None,
                       f"{stats['truncated']:.1%} truncated at {encoder.max_tokens} tokens")
             indexes[cfg.strategy] = (
                 ChunkIndex(chunks, encoder, collection=f"chunks_{cfg.strategy}",
-                           client=client, progress=verbose),
-                BM25Index(chunks),
+                           client=client, progress=verbose, doc_metadata=meta),
+                BM25Index(chunks, doc_metadata=meta),
                 stats,
             )
 

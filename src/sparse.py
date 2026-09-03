@@ -49,15 +49,30 @@ class BM25Index:
     contract, and per-document statistics over a few dozen chunks are noise.
     """
 
-    def __init__(self, chunks: list[Chunk]):
+    def __init__(self, chunks: list[Chunk], doc_metadata: dict[str, dict] | None = None):
         self.chunks = chunks
+        self.doc_metadata = doc_metadata or {}
         self.bm25 = BM25Okapi([tokenize(c.text) for c in chunks])
 
-    def search(self, query: str, limit: int, doc_id: str | None = None) -> list[Chunk]:
+    def _matches(self, chunk: Chunk, where: dict) -> bool:
+        meta = self.doc_metadata.get(chunk.doc_id, {})
+        for key, want in where.items():
+            got = meta.get(key)
+            if isinstance(want, (list, tuple, set)):
+                if got not in want:
+                    return False
+            elif got != want:
+                return False
+        return True
+
+    def search(self, query: str, limit: int, doc_id: str | None = None,
+               where: dict | None = None) -> list[Chunk]:
         scores = self.bm25.get_scores(tokenize(query))
         idx = range(len(self.chunks))
         if doc_id is not None:
             idx = [i for i in idx if self.chunks[i].doc_id == doc_id]
+        if where:
+            idx = [i for i in idx if self._matches(self.chunks[i], where)]
         # Ties broken by chunk order so a run is reproducible. BM25 returns 0.0
         # for every chunk sharing no term with the query, and on a scoped search
         # that can be most of them.

@@ -137,7 +137,8 @@ class StubIndex:
         self.hits = hits
         self.calls: list[tuple] = []
 
-    def search(self, query: str, limit: int, doc_id: str | None = None) -> list[Chunk]:
+    def search(self, query: str, limit: int, doc_id: str | None = None,
+               where: dict | None = None) -> list[Chunk]:
         self.calls.append((query, limit, doc_id))
         return [c for c in self.hits if doc_id is None or c.doc_id == doc_id][:limit]
 
@@ -190,3 +191,24 @@ def test_hybrid_without_a_sparse_index_is_rejected():
     with pytest.raises(ValueError, match="needs a BM25Index"):
         retrieve(StubIndex([]), "q", 1, retriever="hybrid")
 
+
+# ---------------------------------------------------------------------------
+# metadata filtering on the sparse side
+# ---------------------------------------------------------------------------
+
+def test_bm25_filters_on_document_metadata():
+    idx = BM25Index(corpus(), doc_metadata={"a": {"jurisdiction": "US"},
+                                            "b": {"jurisdiction": "UK"}})
+    hits = idx.search("Territory", 10, where={"jurisdiction": "UK"})
+    assert hits and all(c.doc_id == "b" for c in hits)
+
+
+def test_bm25_metadata_filter_accepts_a_set_of_values():
+    idx = BM25Index(corpus(), doc_metadata={"a": {"year": 2019}, "b": {"year": 2024}})
+    assert {c.doc_id for c in idx.search("Territory", 10, where={"year": [2019, 2024]})} \
+        == {"a", "b"}
+
+
+def test_bm25_metadata_filter_excludes_documents_missing_the_field():
+    idx = BM25Index(corpus(), doc_metadata={"a": {"entity": "Acme"}})
+    assert {c.doc_id for c in idx.search("Territory", 10, where={"entity": "Acme"})} == {"a"}

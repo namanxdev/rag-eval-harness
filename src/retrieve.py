@@ -54,7 +54,7 @@ class Ranking:
 def retrieve_ranked(index: ChunkIndex, query: str, k: int, doc_id: str | None = None,
                     reranker: Reranker | None = None, candidate_k: int = 30,
                     sparse: BM25Index | None = None,
-                    retriever: str = "dense") -> Ranking:
+                    retriever: str = "dense", where: dict | None = None) -> Ranking:
     """Top k chunks with retriever attribution. See `retrieve` for the plain list."""
     if retriever not in RETRIEVERS:
         raise ValueError(f"unknown retriever {retriever!r}; expected one of {RETRIEVERS}")
@@ -67,17 +67,17 @@ def retrieve_ranked(index: ChunkIndex, query: str, k: int, doc_id: str | None = 
 
     sources: dict[str, dict] = {}
     if retriever == "dense":
-        candidates = index.search(query, pool, doc_id=doc_id)
+        candidates = index.search(query, pool, doc_id=doc_id, where=where)
     elif retriever == "bm25":
-        candidates = sparse.search(query, pool, doc_id=doc_id)
+        candidates = sparse.search(query, pool, doc_id=doc_id, where=where)
     else:
         # Fuse over the wider pool, not over the top k of each: a chunk that is
         # 8th on both lists should beat one that is 1st on a single list, and
         # it can only do that if both lists are long enough to contain it.
         wide = max(candidate_k, k)
         candidates, sources = reciprocal_rank_fusion(
-            {"dense": index.search(query, wide, doc_id=doc_id),
-             "bm25": sparse.search(query, wide, doc_id=doc_id)},
+            {"dense": index.search(query, wide, doc_id=doc_id, where=where),
+             "bm25": sparse.search(query, wide, doc_id=doc_id, where=where)},
             limit=pool,
         )
 
@@ -88,7 +88,8 @@ def retrieve_ranked(index: ChunkIndex, query: str, k: int, doc_id: str | None = 
 
 def retrieve(index: ChunkIndex, query: str, k: int, doc_id: str | None = None,
              reranker: Reranker | None = None, candidate_k: int = 30,
-             sparse: BM25Index | None = None, retriever: str = "dense") -> list[Chunk]:
+             sparse: BM25Index | None = None, retriever: str = "dense",
+             where: dict | None = None) -> list[Chunk]:
     """Return the top k chunks, reranking a wider candidate pool when given one."""
     return retrieve_ranked(index, query, k, doc_id, reranker, candidate_k,
-                           sparse, retriever).chunks
+                           sparse, retriever, where).chunks
