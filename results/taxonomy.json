@@ -1,0 +1,1206 @@
+{
+  "config": "naive",
+  "summary": {
+    "n_failing": 21,
+    "counts": {
+      "chunk-severance": 15,
+      "rank-miss": 6
+    },
+    "patterns": [
+      {
+        "label": "chunk-severance",
+        "count": 15,
+        "share": 0.7142857142857143,
+        "fix": "chunking",
+        "examples": [
+          "q001",
+          "q006"
+        ]
+      },
+      {
+        "label": "rank-miss",
+        "count": 6,
+        "share": 0.2857142857142857,
+        "fix": "reranking",
+        "examples": [
+          "q014",
+          "q025"
+        ]
+      }
+    ]
+  },
+  "labels": [
+    {
+      "query_id": "q001",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Exclusivity",
+        "doc_id": "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag",
+        "span_recall@5": 0.0,
+        "uncovered": [
+          {
+            "start": 6873,
+            "end": 7069,
+            "covered": 0.0,
+            "text": "The license hereby granted shall be exclusive as to the products described in subparagraphs 2.(a)(1) and (2) of this Agr"
+          },
+          {
+            "start": 7070,
+            "end": 7600,
+            "covered": 0.0,
+            "text": "Nothing in this Agreement shall be construed to prevent KI, Inc. from granting any other licenses for the use of KI's na"
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              6873,
+              7069
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:7",
+                "start": 5950,
+                "end": 6950,
+                "rank": 23
+              },
+              {
+                "chunk_id": "ambassadoreyeweargroupinc-11-17-1997-ex-10-28-endorsement-ag:naive:8",
+                "start": 6800,
+                "end": 7800,
+                "rank": 16
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q006",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Exclusivity",
+        "doc_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development",
+        "span_recall@5": 0.0,
+        "uncovered": [
+          {
+            "start": 8603,
+            "end": 8778,
+            "covered": 0.0,
+            "text": "HDI shall have the exclusive right to use of the \"Deerskin\" brand for a self-contained web site for the offering of Deer"
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              8603,
+              8778
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:9",
+                "start": 7650,
+                "end": 8650,
+                "rank": 8
+              },
+              {
+                "chunk_id": "americasshoppingmallinc-12-10-1999-ex-10-2-site-development:naive:10",
+                "start": 8500,
+                "end": 9500,
+                "rank": 13
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q011",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Joint Ip Ownership",
+        "doc_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi",
+        "span_recall@5": 0.3333333333333333,
+        "uncovered": [
+          {
+            "start": 11547,
+            "end": 11989,
+            "covered": 0.0,
+            "text": "\"Joint Work\" means any content, data, URLs, domain names, technology, software, code, user interfaces, \"look and feel\" o"
+          },
+          {
+            "start": 11990,
+            "end": 12237,
+            "covered": 0.0,
+            "text": "Derivative Works, on the one hand, and/or Company Existing Intellectual Property, Company Future Intellectual Property a"
+          },
+          {
+            "start": 12742,
+            "end": 12988,
+            "covered": 0.0,
+            "text": "Site Functionality or technology, software, code, user interfaces or \"look and feel\" related thereto or incorporated the"
+          },
+          {
+            "start": 45793,
+            "end": 46463,
+            "covered": 0.384,
+            "text": "registration of any Intellectual Property Rights associated with the Joint      Works without the other Party's prior wr"
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              11547,
+              11989
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:13",
+                "start": 11050,
+                "end": 12050,
+                "rank": null
+              },
+              {
+                "chunk_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:14",
+                "start": 11900,
+                "end": 12900,
+                "rank": 7
+              }
+            ]
+          },
+          {
+            "span": [
+              11990,
+              12237
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:13",
+                "start": 11050,
+                "end": 12050,
+                "rank": null
+              },
+              {
+                "chunk_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:14",
+                "start": 11900,
+                "end": 12900,
+                "rank": 7
+              }
+            ]
+          },
+          {
+            "span": [
+              12742,
+              12988
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:14",
+                "start": 11900,
+                "end": 12900,
+                "rank": 7
+              },
+              {
+                "chunk_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:15",
+                "start": 12750,
+                "end": 13750,
+                "rank": 25
+              }
+            ]
+          },
+          {
+            "span": [
+              45793,
+              46463
+            ],
+            "covered": 0.384,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:53",
+                "start": 45050,
+                "end": 46050,
+                "rank": 0
+              },
+              {
+                "chunk_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:54",
+                "start": 45900,
+                "end": 46900,
+                "rank": 5
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q012",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Minimum Commitment",
+        "doc_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi",
+        "span_recall@5": 0.0,
+        "uncovered": [
+          {
+            "start": 29197,
+            "end": 30468,
+            "covered": 0.0,
+            "text": "During each Year of the Term following the Launch Date, ACSI (or one of its Affiliates) will deliver Amazon.com-branded "
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              29197,
+              30468
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:34",
+                "start": 28900,
+                "end": 29900,
+                "rank": null
+              },
+              {
+                "chunk_id": "audibleinc-20001113-10-q-ex-10-32-2599586-ex-10-32-co-brandi:naive:35",
+                "start": 29750,
+                "end": 30750,
+                "rank": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q014",
+      "label": "rank-miss",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Rofr/Rofo/Rofn",
+        "doc_id": "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement",
+        "span_recall@5": 0.5,
+        "uncovered": [
+          {
+            "start": 6235,
+            "end": 6531,
+            "covered": 0.0,
+            "text": "On or as soon as practicable following the Effective Date, it is intended that you will be granted an option under the O"
+          }
+        ],
+        "k": 5,
+        "ranked_below_k": [
+          {
+            "chunk_id": "bicycletherapeuticsplc-03-10-2020-ex-10-11-service-agreement:naive:7",
+            "rank": 13
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q016",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "License Grant",
+        "doc_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement",
+        "span_recall@5": 0.0,
+        "uncovered": [
+          {
+            "start": 7613,
+            "end": 7966,
+            "covered": 0.0,
+            "text": "Upon the terms and conditions set forth in this Agreement, Biocept hereby grants Life Technologies during the Term the n"
+          },
+          {
+            "start": 7992,
+            "end": 8364,
+            "covered": 0.0,
+            "text": "The parties hereby grant to each other non-exclusive, fully-paid, royalty-free licenses to utilize the other party's tra"
+          },
+          {
+            "start": 8373,
+            "end": 8456,
+            "covered": 0.0,
+            "text": "use in connection with the promotion and performance of the Tests in the Territory. All materials associated with the Te"
+          },
+          {
+            "start": 10150,
+            "end": 10450,
+            "covered": 0.0,
+            "text": "To facilitate the promotion and performance of Tests, during the Term Life Technologies hereby grants Biocept a non-excl"
+          },
+          {
+            "start": 43674,
+            "end": 44076,
+            "covered": 0.0,
+            "text": "If Biocept does not obtain at least ten million dollars ($10,000,000) in equity financing by December 31, 2012, then Lif"
+          },
+          {
+            "start": 44086,
+            "end": 44182,
+            "covered": 0.0,
+            "text": "Rights and know-how to independently commercialize the Assay in accordance with applicable Laws. Biocept will provide no"
+          },
+          {
+            "start": 49409,
+            "end": 50080,
+            "covered": 0.0,
+            "text": "To the extent any Development owned by Life Technologies relates directly to the practice of, or constitutes an improvem"
+          },
+          {
+            "start": 50081,
+            "end": 50564,
+            "covered": 0.0,
+            "text": "To the extent any Development owned by Biocept relates directly to the practice of, or constitutes an improvement to, th"
+          },
+          {
+            "start": 50778,
+            "end": 51153,
+            "covered": 0.0,
+            "text": "To the extent that either party owns Intellectual Property Rights to specific biomarkers, targets, kits, dyes or technol"
+          },
+          {
+            "start": 51154,
+            "end": 51539,
+            "covered": 0.0,
+            "text": "To the extent that either party has licensed or will license Intellectual Property Rights from Third Parties related to "
+          },
+          {
+            "start": 51549,
+            "end": 51652,
+            "covered": 0.0,
+            "text": "other party is covered under its license, to practice these Intellectual Property Rights for the Assay. In the event of "
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              7613,
+              7966
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:8",
+                "start": 6800,
+                "end": 7800,
+                "rank": 19
+              },
+              {
+                "chunk_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:9",
+                "start": 7650,
+                "end": 8650,
+                "rank": 25
+              }
+            ]
+          },
+          {
+            "span": [
+              10150,
+              10450
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:11",
+                "start": 9350,
+                "end": 10350,
+                "rank": null
+              },
+              {
+                "chunk_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:12",
+                "start": 10200,
+                "end": 11200,
+                "rank": null
+              }
+            ]
+          },
+          {
+            "span": [
+              49409,
+              50080
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:57",
+                "start": 48450,
+                "end": 49450,
+                "rank": 10
+              },
+              {
+                "chunk_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:58",
+                "start": 49300,
+                "end": 50300,
+                "rank": 12
+              }
+            ]
+          },
+          {
+            "span": [
+              50081,
+              50564
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:58",
+                "start": 49300,
+                "end": 50300,
+                "rank": 12
+              },
+              {
+                "chunk_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:59",
+                "start": 50150,
+                "end": 51150,
+                "rank": 15
+              }
+            ]
+          },
+          {
+            "span": [
+              50778,
+              51153
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:59",
+                "start": 50150,
+                "end": 51150,
+                "rank": 15
+              },
+              {
+                "chunk_id": "bioceptinc-08-19-2013-ex-10-collaboration-agreement:naive:60",
+                "start": 51000,
+                "end": 52000,
+                "rank": 22
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q020",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Cap On Liability",
+        "doc_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a",
+        "span_recall@5": 0.0,
+        "uncovered": [
+          {
+            "start": 14096,
+            "end": 14314,
+            "covered": 0.0,
+            "text": "Company is not liable for incidental, special or consequential damages for any reason (including loss of data or other b"
+          },
+          {
+            "start": 14315,
+            "end": 14399,
+            "covered": 0.0,
+            "text": "Company's liability shall not exceed the fees that MA has paid under this Agreement. MA agrees that the pricing for the "
+          },
+          {
+            "start": 16147,
+            "end": 16261,
+            "covered": 0.0,
+            "text": "The foregoing states the entire liability of Company with respect to infringement of intellectual property rights.\n\n7\n\nS"
+          },
+          {
+            "start": 20020,
+            "end": 20494,
+            "covered": 0.0,
+            "text": "COMPANY'S SOLE AND EXCLUSIVE LIABILITY FOR THE WARRANTY PROVIDED IN SUBPARAGRAH (A) HEREOF SHALL BE TO CORRECT THE TECHN"
+          },
+          {
+            "start": 20497,
+            "end": 20884,
+            "covered": 0.0,
+            "text": "IN NO EVENT SHALL COMPANY BE LIABLE TO \"MA\", ITS CLIENTS, OR ANY THIRD PARTY FOR ANY TORT OR CONTRACT DAMAGES OR INDIREC"
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              16147,
+              16261
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:18",
+                "start": 15300,
+                "end": 16300,
+                "rank": 15
+              },
+              {
+                "chunk_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:19",
+                "start": 16150,
+                "end": 17150,
+                "rank": 21
+              }
+            ]
+          },
+          {
+            "span": [
+              20020,
+              20494
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:23",
+                "start": 19550,
+                "end": 20550,
+                "rank": 13
+              },
+              {
+                "chunk_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:24",
+                "start": 20400,
+                "end": 21400,
+                "rank": 7
+              }
+            ]
+          },
+          {
+            "span": [
+              20497,
+              20884
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:23",
+                "start": 19550,
+                "end": 20550,
+                "rank": 13
+              },
+              {
+                "chunk_id": "cybergyholdingsinc-20140520-10-q-ex-10-27-8605784-ex-10-27-a:naive:24",
+                "start": 20400,
+                "end": 21400,
+                "rank": 7
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q023",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Ip Ownership Assignment",
+        "doc_id": "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement",
+        "span_recall@5": 0.5,
+        "uncovered": [
+          {
+            "start": 10461,
+            "end": 11060,
+            "covered": 0.0,
+            "text": "Consultant agrees to keep and maintain adequate, current, accurate, and authentic written records of all Inventions made"
+          },
+          {
+            "start": 11086,
+            "end": 11817,
+            "covered": 0.0,
+            "text": "Consultant agrees to assist Company, or its designee, at the Company's expense, in every proper way to secure the Compan"
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              10461,
+              11060
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:12",
+                "start": 10200,
+                "end": 11200,
+                "rank": 5
+              },
+              {
+                "chunk_id": "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:13",
+                "start": 11050,
+                "end": 12050,
+                "rank": 6
+              }
+            ]
+          },
+          {
+            "span": [
+              11086,
+              11817
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:12",
+                "start": 10200,
+                "end": 11200,
+                "rank": 5
+              },
+              {
+                "chunk_id": "drivendeliveries-inc-05-22-2020-ex-10-4-consulting-agreement:naive:13",
+                "start": 11050,
+                "end": 12050,
+                "rank": 6
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q025",
+      "label": "rank-miss",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Cap On Liability",
+        "doc_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra",
+        "span_recall@5": 0.75,
+        "uncovered": [
+          {
+            "start": 16406,
+            "end": 16592,
+            "covered": 0.0,
+            "text": "THE LIABILITY OF DELTATHREE FOR DAMAGES OR ALLEGED DAMAGES HEREUNDER, WHETHER IN CONTRACT, TORT OR ANY OTHER LEGAL THEOR"
+          }
+        ],
+        "k": 5,
+        "ranked_below_k": [
+          {
+            "chunk_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:19",
+            "rank": 9
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q026",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Change Of Control",
+        "doc_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra",
+        "span_recall@5": 0.0,
+        "uncovered": [
+          {
+            "start": 1515,
+            "end": 2043,
+            "covered": 0.0,
+            "text": "The term of this Agreement shall be effective as of the date first stated above and shall continue for a term of three ("
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              1515,
+              2043
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:1",
+                "start": 850,
+                "end": 1850,
+                "rank": 9
+              },
+              {
+                "chunk_id": "deltathreeinc-19991102-s-1a-ex-10-19-6227850-ex-10-19-co-bra:naive:2",
+                "start": 1700,
+                "end": 2700,
+                "rank": 8
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q030",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Ip Ownership Assignment",
+        "doc_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag",
+        "span_recall@5": 0.3333333333333333,
+        "uncovered": [
+          {
+            "start": 22741,
+            "end": 22961,
+            "covered": 0.0,
+            "text": "eBix shall own and retain all right, title and interest in and to any       About Customer data generated on the Insuran"
+          },
+          {
+            "start": 23206,
+            "end": 23329,
+            "covered": 0.0,
+            "text": "the About Customer data (except to the extent that it is duplicative of       About User data and as hereinafter provide"
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              22741,
+              22961
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:26",
+                "start": 22100,
+                "end": 23100,
+                "rank": 24
+              },
+              {
+                "chunk_id": "ebixinc-20010515-10-q-ex-10-3-4049767-ex-10-3-co-branding-ag:naive:27",
+                "start": 22950,
+                "end": 23950,
+                "rank": 26
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q031",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Exclusivity",
+        "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+        "span_recall@5": 0.5,
+        "uncovered": [
+          {
+            "start": 26058,
+            "end": 26566,
+            "covered": 0.0,
+            "text": "If the Board elects to pursue such Neutraceutical Opportunity, the Operating Company then shall have exclusive rights to"
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              26058,
+              26566
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:30",
+                "start": 25500,
+                "end": 26500,
+                "rank": 20
+              },
+              {
+                "chunk_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:31",
+                "start": 26350,
+                "end": 27350,
+                "rank": 7
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q032",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Non-Compete",
+        "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+        "span_recall@5": 0.5,
+        "uncovered": [
+          {
+            "start": 22174,
+            "end": 22640,
+            "covered": 0.0,
+            "text": "After the Effective Date and as long as Igene and T&L continue to own an interest in the Operating Company, neither of t"
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              22174,
+              22640
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:25",
+                "start": 21250,
+                "end": 22250,
+                "rank": null
+              },
+              {
+                "chunk_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:26",
+                "start": 22100,
+                "end": 23100,
+                "rank": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q033",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Rofr/Rofo/Rofn",
+        "doc_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen",
+        "span_recall@5": 0.75,
+        "uncovered": [
+          {
+            "start": 25059,
+            "end": 25887,
+            "covered": 0.0,
+            "text": "If, after the date of this Agreement and continuing as long as either Party is a partner, member, or shareholder of the "
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              25059,
+              25887
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:29",
+                "start": 24650,
+                "end": 25650,
+                "rank": null
+              },
+              {
+                "chunk_id": "igenebiotechnologyinc-05-13-2003-ex-1-joint-venture-agreemen:naive:30",
+                "start": 25500,
+                "end": 26500,
+                "rank": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q038",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Rofr/Rofo/Rofn",
+        "doc_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement",
+        "span_recall@5": 0.0,
+        "uncovered": [
+          {
+            "start": 31795,
+            "end": 32139,
+            "covered": 0.0,
+            "text": "To the extent permitted by Governmental Authorities, MPL will provide to each Shipper a first right, on terms and condit"
+          },
+          {
+            "start": 32306,
+            "end": 32524,
+            "covered": 0.0,
+            "text": "No later than sixty (60) days following the date of MPL's Expansion Notice, Shipper must commit to, in a form acceptable"
+          },
+          {
+            "start": 32525,
+            "end": 33129,
+            "covered": 0.0,
+            "text": "In the event that, pursuant to this first right, MPL receives binding commitments for volumes that exceed the expansion "
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              32306,
+              32524
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:37",
+                "start": 31450,
+                "end": 32450,
+                "rank": 13
+              },
+              {
+                "chunk_id": "mplxlp-06-17-2015-ex-10-1-transportation-services-agreement:naive:38",
+                "start": 32300,
+                "end": 33300,
+                "rank": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q039",
+      "label": "rank-miss",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Governing Law",
+        "doc_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement",
+        "span_recall@5": 0.0,
+        "uncovered": [
+          {
+            "start": 41136,
+            "end": 41382,
+            "covered": 0.0,
+            "text": "This Agreement will be governed by and                   construed in accordance with the laws of the State of          "
+          }
+        ],
+        "k": 5,
+        "ranked_below_k": [
+          {
+            "chunk_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:48",
+            "rank": 6
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q040",
+      "label": "rank-miss",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "License Grant",
+        "doc_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement",
+        "span_recall@5": 0.0,
+        "uncovered": [
+          {
+            "start": 31714,
+            "end": 31922,
+            "covered": 0.0,
+            "text": "Each party hereby grants to the other a non-exclusive,                   limited license to use its trademarks, service "
+          }
+        ],
+        "k": 5,
+        "ranked_below_k": [
+          {
+            "chunk_id": "netgrocerinc-07-31-1998-ex-10-15-sponsorship-agreement:naive:37",
+            "rank": 5
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q042",
+      "label": "rank-miss",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Cap On Liability",
+        "doc_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a",
+        "span_recall@5": 0.5,
+        "uncovered": [
+          {
+            "start": 30121,
+            "end": 30593,
+            "covered": 0.0,
+            "text": "In the event of any breach of this Agreement, the sole remedy of the non-breaching Party will be to seek monetary damage"
+          }
+        ],
+        "k": 5,
+        "ranked_below_k": [
+          {
+            "chunk_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:35",
+            "rank": 17
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q043",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Irrevocable Or Perpetual License",
+        "doc_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a",
+        "span_recall@5": 0.0,
+        "uncovered": [
+          {
+            "start": 23502,
+            "end": 25959,
+            "covered": 0.182,
+            "text": "Subject to Section 3.2, a Licensor Party, on behalf of itself and the other members of the Licensor Group, and solely to"
+          },
+          {
+            "start": 25968,
+            "end": 26519,
+            "covered": 0.0,
+            "text": "(d) the Intellectual Property Rights are Performer Background IPR or Patent rights of the Licensor Party or another memb"
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              23502,
+              25959
+            ],
+            "covered": 0.182,
+            "n_chunks": 4,
+            "chunks": [
+              {
+                "chunk_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:27",
+                "start": 22950,
+                "end": 23950,
+                "rank": 0
+              },
+              {
+                "chunk_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:28",
+                "start": 23800,
+                "end": 24800,
+                "rank": 6
+              },
+              {
+                "chunk_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:29",
+                "start": 24650,
+                "end": 25650,
+                "rank": 17
+              },
+              {
+                "chunk_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:30",
+                "start": 25500,
+                "end": 26500,
+                "rank": 25
+              }
+            ]
+          },
+          {
+            "span": [
+              25968,
+              26519
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:30",
+                "start": 25500,
+                "end": 26500,
+                "rank": 25
+              },
+              {
+                "chunk_id": "otisworldwidecorp-04-03-2020-ex-10-4-intellectual-property-a:naive:31",
+                "start": 26350,
+                "end": 27350,
+                "rank": 21
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q047",
+      "label": "chunk-severance",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Irrevocable Or Perpetual License",
+        "doc_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem",
+        "span_recall@5": 0.5,
+        "uncovered": [
+          {
+            "start": 8295,
+            "end": 8597,
+            "covered": 0.0,
+            "text": "LMG will maintain, through the Conversion Date or such other date as is specified in Exhibit A, its existing licenses fo"
+          }
+        ],
+        "severed_spans": [
+          {
+            "span": [
+              8295,
+              8597
+            ],
+            "covered": 0.0,
+            "n_chunks": 2,
+            "chunks": [
+              {
+                "chunk_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:9",
+                "start": 7650,
+                "end": 8650,
+                "rank": 10
+              },
+              {
+                "chunk_id": "reganholdingcorp-03-31-2008-ex-10-license-and-hosting-agreem:naive:10",
+                "start": 8500,
+                "end": 9500,
+                "rank": 26
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q050",
+      "label": "rank-miss",
+      "evidence": {
+        "config": "naive",
+        "clause_type": "Insurance",
+        "doc_id": "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc",
+        "span_recall@5": 0.8888888888888888,
+        "uncovered": [
+          {
+            "start": 41084,
+            "end": 41555,
+            "covered": 0.0,
+            "text": "Operator shall maintain Commercial General Liability Insurance covering its operations under this Agreement including, w"
+          }
+        ],
+        "k": 5,
+        "ranked_below_k": [
+          {
+            "chunk_id": "vertexenergyinc-08-14-2014-ex-10-24-operation-and-maintenanc:naive:48",
+            "rank": 6
+          }
+        ]
+      }
+    }
+  ]
+}

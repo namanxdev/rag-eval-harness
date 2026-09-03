@@ -287,7 +287,7 @@ def write_report(results: list[Result], eval_set: dict, out_dir: Path,
             by_type.setdefault(row["clause_type"], {}).setdefault(r.config.name, []).append(row["mrr"])
 
     lines = [
-        "# Retrieval evaluation: naive vs clause-aware chunking",
+        "# Retrieval evaluation: chunking, retrieval, reranking and filtering",
         "",
         f"Generated {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M')} UTC by `run_eval.py`.",
         "",
@@ -298,6 +298,10 @@ def write_report(results: list[Result], eval_set: dict, out_dir: Path,
         f"{counts['gold_spans']} lawyer-annotated gold spans.",
         f"- **Embedding**: `{encoder.model_name}` ({encoder.dim}-dim), Qdrant in-memory, cosine.",
         f"- **Reranker**: `{reranker.model_name}`." if reranker else "- **Reranker**: disabled.",
+        "- **Retrievers**: dense (embeddings), BM25 (lexical), and the two fused with "
+        "Reciprocal Rank Fusion at k=60. RRF rather than a weighted score sum, because "
+        "cosine and BM25 scores are on unrelated scales and normalising them introduces "
+        "a weight with no principled value.",
         f"- **Ranking depth**: {RANK_DEPTH} chunks per query, retrieved from within the "
         "contract the question is asked of (a Qdrant payload filter on `doc_id`). CUAD's "
         "questions are templated per clause type and worded identically for every "
