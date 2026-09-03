@@ -71,3 +71,67 @@ def span_coverage(retrieved: list[Chunk], doc_id: str, gold: list[Span]) -> floa
             if lo < hi:
                 covered.update(range(lo, hi))
     return len(covered) / total if total else None
+
+
+def span_coverage_fractions(retrieved: list[Chunk], doc_id: str,
+                            gold: list[Span]) -> list[float]:
+    """Per-span coverage: what fraction of *each* gold span's characters is present.
+
+    `span_coverage` pools characters across spans and returns one number, which
+    is why it cannot tell one fully-covered span from two half-covered ones.
+    This keeps the spans separate; the grounding metrics below are built on it.
+    """
+    out = []
+    for gs, ge in gold:
+        if ge <= gs:
+            out.append(0.0)
+            continue
+        covered: set[int] = set()
+        for c in retrieved:
+            if c.doc_id != doc_id:
+                continue
+            lo, hi = max(gs, c.start), min(ge, c.end)
+            if lo < hi:
+                covered.update(range(lo, hi))
+        out.append(len(covered) / (ge - gs))
+    return out
+
+
+def span_recall_at_k(retrieved: list[Chunk], doc_id: str, gold: list[Span], k: int,
+                     threshold: float = 0.5) -> float | None:
+    """Fraction of DISTINCT gold spans covered at >= threshold of their characters.
+
+    Differs from span_coverage, which pools characters across spans and so
+    cannot distinguish one fully-covered span from two half-covered ones.
+    Returns None when gold is empty.
+    """
+    if not gold:
+        return None
+    fracs = span_coverage_fractions(retrieved[:k], doc_id, gold)
+    return sum(f >= threshold for f in fracs) / len(fracs)
+
+
+def complete_grounding_at_k(retrieved: list[Chunk], doc_id: str, gold: list[Span], k: int,
+                            threshold: float = 0.5) -> bool | None:
+    """True only when EVERY gold span clears the threshold.
+
+    The binary the buyer cares about: could a correct, fully-cited answer be
+    produced from this retrieval, or not. A query answered from one of the two
+    clauses it depends on is a wrong answer with a confident citation, and
+    pooled coverage scores that 0.5 and calls it half a success.
+    """
+    if not gold:
+        return None
+    fracs = span_coverage_fractions(retrieved[:k], doc_id, gold)
+    return all(f >= threshold for f in fracs)
+
+
+def uncovered_spans(retrieved: list[Chunk], doc_id: str, gold: list[Span], k: int,
+                    threshold: float = 0.5) -> list[tuple[Span, float]]:
+    """The gold spans that failed the threshold, each with what it did get.
+
+    This is what turns a failing grounding score into something showable: the
+    exact clause the answer would have been missing.
+    """
+    fracs = span_coverage_fractions(retrieved[:k], doc_id, gold)
+    return [(s, f) for s, f in zip(gold, fracs, strict=True) if f < threshold]

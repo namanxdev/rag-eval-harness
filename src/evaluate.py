@@ -12,7 +12,15 @@ from qdrant_client import QdrantClient
 
 from src.chunking import Chunk, chunk_documents
 from src.index import ChunkIndex, Encoder
-from src.metrics import mrr, precision_at_k, recall_at_k, span_coverage
+from src.metrics import (
+    complete_grounding_at_k,
+    mrr,
+    precision_at_k,
+    recall_at_k,
+    span_coverage,
+    span_recall_at_k,
+    uncovered_spans,
+)
 from src.retrieve import Reranker, retrieve
 
 # One ranked list per query, scored at several depths. Every config shares the
@@ -21,6 +29,28 @@ RANK_DEPTH = 30
 P_AT = 5
 R_AT = 10
 COVERAGE_AT = 5
+
+# Grounding is scored at the same depth as coverage so the two are directly
+# comparable: same chunks in, different question asked of them.
+GROUNDING_AT = 5
+# A gold span counts as retrieved when at least this share of its characters is
+# present. Half a clause is not a citation. The value is fixed, not tuned per
+# corpus -- moving it to make a config look better is how these numbers stop
+# meaning anything.
+GROUNDING_THRESHOLD = 0.5
+
+# How much of a missed clause to quote in per_query.json. Enough to recognise
+# the clause, short enough that the file stays readable.
+MISSED_SPAN_CHARS = 120
+
+METRIC_KEYS = [
+    f"precision@{P_AT}",
+    f"recall@{R_AT}",
+    "mrr",
+    f"span_coverage@{COVERAGE_AT}",
+    f"span_recall@{GROUNDING_AT}",
+    f"complete_grounding@{GROUNDING_AT}",
+]
 
 
 @dataclass
@@ -89,13 +119,15 @@ def run_config(cfg: Config, eval_set: dict, reranker: Reranker | None,
     queries = eval_set["queries"]
     chunks = index.chunks
 
+    texts = {d["doc_id"]: d["text"] for d in eval_set["documents"]}
+
     rows = []
     for q in queries:
         gold = [tuple(s) for s in q["gold_spans"]]
         ranked = retrieve(index, q["query"], RANK_DEPTH, doc_id=q["doc_id"],
                           reranker=reranker if cfg.rerank else None,
                           candidate_k=RANK_DEPTH)
-        rows.append({
+        row = {
             "query_id": q["query_id"],
             "clause_type": q["clause_type"],
             "doc_id": q["doc_id"],
@@ -103,12 +135,31 @@ def run_config(cfg: Config, eval_set: dict, reranker: Reranker | None,
             f"recall@{R_AT}": recall_at_k(ranked, q["doc_id"], gold, chunks, R_AT),
             "mrr": mrr(ranked, q["doc_id"], gold),
             f"span_coverage@{COVERAGE_AT}": span_coverage(ranked[:COVERAGE_AT], q["doc_id"], gold),
+            f"span_recall@{GROUNDING_AT}": span_recall_at_k(
+                ranked, q["doc_id"], gold, GROUNDING_AT, GROUNDING_THRESHOLD),
+            f"complete_grounding@{GROUNDING_AT}": complete_grounding_at_k(
+                ranked, q["doc_id"], gold, GROUNDING_AT, GROUNDING_THRESHOLD),
             "top_chunk_ids": [c.chunk_id for c in ranked[:P_AT]],
-        })
+            "ranked_chunk_ids": [c.chunk_id for c in ranked],
+        }
 
-    keys = [f"precision@{P_AT}", f"recall@{R_AT}", "mrr", f"span_coverage@{COVERAGE_AT}"]
+        # The clause the answer would have been missing. A grounding rate is a
+        # number; this is the thing you put in front of a client.
+        if row[f"complete_grounding@{GROUNDING_AT}"] is False \
+                and (row[f"span_recall@{GROUNDING_AT}"] or 0) > 0:
+            row["missed_spans"] = [
+                {"start": s, "end": e, "covered": round(frac, 3),
+                 "text": texts[q["doc_id"]][s:s + MISSED_SPAN_CHARS]}
+                for (s, e), frac in uncovered_spans(
+                    ranked, q["doc_id"], gold, GROUNDING_AT, GROUNDING_THRESHOLD)
+            ]
+
+        rows.append(row)
+
     aggregates = {}
-    for key in keys:
+    for key in METRIC_KEYS:
+        # Booleans mean over to a rate; None means the metric was undefined for
+        # that query (no gold spans) and must not be scored as a zero.
         vals = [r[key] for r in rows if r[key] is not None]
         aggregates[key] = statistics.mean(vals) if vals else float("nan")
 
@@ -154,13 +205,17 @@ def run_all(eval_set: dict, encoder: Encoder, reranker: Reranker | None,
 # ---------------------------------------------------------------------------
 
 def format_table(results: list[Result]) -> str:
-    keys = [f"precision@{P_AT}", f"recall@{R_AT}", "mrr", f"span_coverage@{COVERAGE_AT}"]
-    head = f"| {'config':<16} | chunks | median chars | " + " | ".join(f"{k:>18}" for k in keys) + " |"
-    rule = f"|{'-'*18}|{'-'*8}|{'-'*14}|" + "|".join("-" * 20 for _ in keys) + "|"
+    name_w = max(6, *(len(r.config.name) for r in results))
+    widths = [max(len(k), 7) for k in METRIC_KEYS]
+    head = (f"| {'config':<{name_w}} | chunks | median chars | "
+            + " | ".join(f"{k:>{w}}" for k, w in zip(METRIC_KEYS, widths, strict=True)) + " |")
+    rule = (f"|{'-' * (name_w + 2)}|{'-' * 8}|{'-' * 14}|"
+            + "|".join("-" * (w + 2) for w in widths) + "|")
     lines = [head, rule]
     for r in results:
-        cells = " | ".join(f"{r.aggregates[k]:>18.3f}" for k in keys)
-        lines.append(f"| {r.config.name:<16} | {r.stats['n_chunks']:>6} "
+        cells = " | ".join(f"{r.aggregates[k]:>{w}.3f}"
+                           for k, w in zip(METRIC_KEYS, widths, strict=True))
+        lines.append(f"| {r.config.name:<{name_w}} | {r.stats['n_chunks']:>6} "
                      f"| {r.stats['median_chars']:>12} | {cells} |")
     return "\n".join(lines)
 
@@ -200,6 +255,20 @@ def write_report(results: list[Result], eval_set: dict, out_dir: Path,
         "`span_coverage` is the fraction of gold characters present in the top "
         f"{COVERAGE_AT} chunks. It is the only metric here that is comparable across "
         "chunking strategies -- see Limitations in the README.",
+        "",
+        f"`span_recall@{GROUNDING_AT}` is the fraction of *distinct* gold spans that got "
+        f"at least {GROUNDING_THRESHOLD:.0%} of their characters retrieved, and "
+        f"`complete_grounding@{GROUNDING_AT}` is the rate at which *every* gold span "
+        "cleared that bar. They exist because pooled character coverage cannot tell one "
+        "fully-retrieved clause from two half-retrieved ones. A query whose answer "
+        "depends on two clauses, one returned whole and one missed entirely, scores 0.5 "
+        "on coverage and reads as partial success; it is a wrong answer carrying a "
+        "confident citation. Complete grounding is the rate at which a fully-cited "
+        f"answer was possible at all. The {GROUNDING_THRESHOLD:.0%} threshold is fixed, "
+        "not fitted per corpus.",
+        "",
+        "Per-query detail, including the text of every clause a failing query missed, "
+        "is in `per_query.json` under `missed_spans`.",
         "",
         "## What chunking alone decides",
         "",
