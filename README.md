@@ -159,6 +159,14 @@ A repo whose entire pitch is measurement rigour had no tests. These are the ones
 - **The dense path is unchanged** — `retrieve()` with no sparse index issues the identical single search it did before hybrid retrieval existed.
 - **Backlog attribution** — a config that moves two levers cannot lend its delta to either, and a lever that made things worse reports a negative number rather than being dropped.
 
+## Documentation
+
+| document | covers |
+|---|---|
+| [`docs/v2.md`](docs/v2.md) | What v2 added and why, what the run found, and what changed for code that already used the harness |
+| [`docs/architecture.md`](docs/architecture.md) | Data flow, module contracts, the invariants, and how to add a strategy / retriever / metric / failure label |
+| [`docs/metrics.md`](docs/metrics.md) | Exact definitions of every metric and failure label, with worked examples |
+
 ## Limitations
 
 **Precision@k is not comparable across chunking strategies.** The number of gold-relevant chunks depends on how the document was split, so a strategy producing larger chunks can inflate precision without retrieving one extra character of the answer. That is not hypothetical here — it is exactly what the table shows. Naive chunking makes 2.70 chunks relevant per query against clause-aware's 1.58, which caps precision@5 at 0.504 versus 0.312. Measured against its own ceiling, clause-aware attains **66.7%** and naive **54.8%**: the strategy that looks worse on the raw metric is the more precise one. Span coverage is reported alongside as a chunking-invariant measure, since it counts gold characters rather than chunks. Recall@k inherits the same flaw in its denominator, and should be read the same way.
