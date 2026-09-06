@@ -1,7 +1,9 @@
 """Entry point: python run_eval.py
 
-Runs three configurations over the CUAD eval set and writes results/report.md.
-Everything is local and CPU-only; no API key is required.
+Runs every configuration over the CUAD eval set and writes two reports:
+results/report.md (developer: all configs, all diagnostics) and
+results/client_report.md (the sprint readout: baseline, failure patterns, fix
+backlog, scope). Everything is local and CPU-only; no API key is required.
 """
 
 from __future__ import annotations
@@ -19,6 +21,7 @@ sys.path.insert(0, str(ROOT))
 
 from src.evaluate import format_table, run_all, write_report          # noqa: E402
 from src.index import EMBED_MODEL, Encoder                            # noqa: E402
+from src.report import write_client_report                            # noqa: E402
 from src.retrieve import RERANK_MODEL, Reranker                       # noqa: E402
 
 
@@ -34,6 +37,9 @@ def main() -> None:
                         "recommended prefix for bge* models and none otherwise; "
                         "pass '' to disable.")
     p.add_argument("--no-rerank", action="store_true", help="skip the cross-encoder stage")
+    p.add_argument("--baseline", default=None,
+                   help="config name to treat as the client's current setup in "
+                        "results/client_report.md. Defaults to the first config run.")
     p.add_argument("--quiet", action="store_true")
     args = p.parse_args()
 
@@ -62,8 +68,11 @@ def main() -> None:
     print()
 
     report = write_report(results, eval_set, args.results, encoder, reranker)
+    client = write_client_report(results, eval_set, args.results, args.baseline)
     print(f"wrote {report}")
+    print(f"wrote {client}")
     print(f"wrote {args.results / 'per_query.json'}")
+    print(f"wrote {args.results / 'taxonomy.json'}")
 
 
 if __name__ == "__main__":

@@ -62,15 +62,36 @@ class Encoder:
         return sum(len(tok.encode(t)) > self.max_tokens for t in texts) / len(texts)
 
 
+# Payload keys the chunk itself owns. Document metadata may not shadow them:
+# a client field called `start` silently breaking offset arithmetic is the kind
+# of failure that shows up as a wrong metric three weeks later.
+CHUNK_PAYLOAD_KEYS = frozenset({"doc_id", "chunk_id", "text", "start", "end", "strategy"})
+
+
 class ChunkIndex:
-    """A Qdrant collection holding one chunking strategy's chunks."""
+    """A Qdrant collection holding one chunking strategy's chunks.
+
+    Each point carries its chunk's offsets plus whatever metadata its source
+    document declared -- effective date, entity, document type, version. Those
+    fields are filterable at query time (`search(..., where=...)`), which is
+    what lets metadata filtering be evaluated as a retrieval lever rather than
+    used only as a scoping convenience.
+    """
 
     def __init__(self, chunks: list[Chunk], encoder: Encoder, collection: str,
-                 client: QdrantClient | None = None, progress: bool = False):
+                 client: QdrantClient | None = None, progress: bool = False,
+                 doc_metadata: dict[str, dict] | None = None):
         self.collection = collection
         self.encoder = encoder
         self.chunks = chunks
         self.client = client or QdrantClient(":memory:")
+        self.doc_metadata = doc_metadata or {}
+
+        clashes = {k for meta in self.doc_metadata.values() for k in meta} & CHUNK_PAYLOAD_KEYS
+        if clashes:
+            raise ValueError(
+                f"document metadata may not use reserved chunk fields: {sorted(clashes)}")
+        self.metadata_fields = sorted({k for m in self.doc_metadata.values() for k in m})
 
         vectors = encoder.encode([c.text for c in chunks], progress=progress)
         if self.client.collection_exists(collection):
@@ -85,7 +106,7 @@ class ChunkIndex:
                 models.PointStruct(
                     id=i,
                     vector=vec.tolist(),
-                    payload={
+                    payload=self.doc_metadata.get(c.doc_id, {}) | {
                         "doc_id": c.doc_id,
                         "chunk_id": c.chunk_id,
                         "text": c.text,
@@ -98,8 +119,9 @@ class ChunkIndex:
             ],
         )
 
-    def search(self, query: str, limit: int, doc_id: str | None = None) -> list[Chunk]:
-        """Nearest chunks, optionally restricted to one document.
+    def search(self, query: str, limit: int, doc_id: str | None = None,
+               where: dict | None = None) -> list[Chunk]:
+        """Nearest chunks, optionally restricted by document or by metadata.
 
         CUAD asks its questions *of a given contract*, and the questions are
         templated per clause type -- "Which state/country's law governs the
@@ -109,12 +131,22 @@ class ChunkIndex:
         equally good match and nothing in the query says which one is meant.
         So retrieval is scoped with a payload filter, which is also how a real
         contract-review system narrows to the document under review.
+
+        `where` filters on document metadata the same way: `{"entity": "Acme",
+        "doc_type": "MSA"}` restricts to chunks whose source document declared
+        both. Passing `doc_id=None` disables scoping entirely, which is how the
+        harness measures what the filter is worth.
         """
         vec = self.encoder.encode_query(query)
-        flt = None
+        must = []
         if doc_id is not None:
-            flt = models.Filter(must=[models.FieldCondition(
-                key="doc_id", match=models.MatchValue(value=doc_id))])
+            must.append(models.FieldCondition(
+                key="doc_id", match=models.MatchValue(value=doc_id)))
+        for key, value in (where or {}).items():
+            match = (models.MatchAny(any=list(value)) if isinstance(value, (list, tuple, set))
+                     else models.MatchValue(value=value))
+            must.append(models.FieldCondition(key=key, match=match))
+        flt = models.Filter(must=must) if must else None
         hits = self.client.query_points(
             collection_name=self.collection,
             query=vec.tolist(),
