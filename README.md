@@ -77,7 +77,46 @@ Each label carries the evidence for itself, so any of them can be re-derived by 
 
 Fixed-width chunking severs **57% of gold spans** across chunk boundaries. No ranking function can undo that: a clause split across three chunks cannot be returned whole. This is the mechanism behind the retrieval numbers, and it is measurable without running a retriever at all.
 
+```mermaid
+flowchart LR
+    G["one gold clause<br/>(start, end) from CUAD"]
+    G --> N["naive<br/>fixed 1000-char windows"]
+    G --> C["clause<br/>split on section headers"]
+    N --> N1["chunk n<br/>head of the clause"]
+    N --> N2["chunk n+1<br/>middle"]
+    N --> N3["chunk n+2<br/>tail"]
+    N1 --> NX["retrieval has to surface all three<br/>57% of gold spans are severed like this"]
+    N2 --> NX
+    N3 --> NX
+    C --> C1["chunk m<br/>the whole clause"]
+    C1 --> CX["one chunk is sufficient<br/>99.1% of gold spans stay intact"]
+```
+
 ## How it works
+
+The offsets are what tie it together: they arrive with the annotations, survive
+chunking, and are what the metrics do arithmetic on.
+
+```mermaid
+flowchart TD
+    E["eval_set.json<br/>documents, queries, lawyer-annotated gold_spans"]
+    E --> CH["chunk_documents()<br/>naive: 1000-char windows / clause: section boundaries"]
+    CH --> CK["list of Chunk<br/>every chunk carries (start, end) back into its document"]
+
+    CK --> DI["ChunkIndex - dense<br/>all-MiniLM-L6-v2, Qdrant in :memory:"]
+    CK --> BI["BM25Index - lexical"]
+
+    DI --> RT["retrieve_ranked()<br/>dense, bm25, or hybrid fused with RRF<br/>scoped by the doc_id payload filter"]
+    BI --> RT
+    RT --> RK["optional cross-encoder rerank<br/>over the 30-deep candidate pool"]
+    RK --> TK["top-k chunks"]
+
+    TK --> MX["metrics: character overlap against gold<br/>no string matching, no LLM judge"]
+    E -->|"gold_spans"| MX
+    MX --> TX["taxonomy: one label per failing query, by rule"]
+    MX --> DEV["results/report.md<br/>results/per_query.json"]
+    TX --> CLI["results/client_report.md<br/>results/taxonomy.json"]
+```
 
 **Ground truth.** CUAD ships 510 commercial contracts with 13,000+ clause spans annotated by lawyers, as SQuAD-style JSON where every answer carries an `answer_start` offset into the contract text. `data/prepare.py` converts a deterministic sample into `{query, doc_id, gold_spans}` rows. Ground truth is expert-labeled by someone else — not asserted by this repo.
 
@@ -94,6 +133,22 @@ The payload is not limited to `doc_id`. Any field a document declares — effect
 **Grounding.** `span_coverage` pools gold characters across all of a query's spans, so a question needing two clauses scores 0.5 when one is returned whole and the other missed entirely. `complete_grounding@k` is the binary that pooling hides: every gold span must have at least 50% of its characters retrieved. The threshold is a fixed constant, not fitted per corpus. Where a query fails it, `results/per_query.json` records the offsets and text of each clause that was missing.
 
 **Failure taxonomy.** Every failing query is labelled by rule, first match wins: `ceiling-bound` (a metric artifact, not a retrieval fault), `chunk-severance` (a needed clause split across chunks), `retrieval-miss` (its chunk never entered the top 30), `rank-miss` (its chunk was in the pool but below k), `partial-grounding` (something came back, not enough of it). The conditions are evaluated against the spans that actually failed, so a clause that was split but retrieved whole is not blamed for a failure it did not cause. Each label carries the chunk ids, offsets and rank positions that produced it.
+
+```mermaid
+flowchart TD
+    S["a query fails complete_grounding@5"] --> C1{"fewer relevant chunks exist than k,<br/>and all of them are already in the top 5?"}
+    C1 -->|yes| L1["ceiling-bound<br/>fix: nothing, it is a metric artifact"]
+    C1 -->|no| C2{"a clause that actually failed<br/>is split across more than one chunk?"}
+    C2 -->|yes| L2["chunk-severance<br/>fix: chunking"]
+    C2 -->|no| C3{"the chunk carrying it never<br/>entered the 30-deep pool?"}
+    C3 -->|yes| L3["retrieval-miss<br/>fix: hybrid retrieval, embedding model"]
+    C3 -->|no| C4{"the chunk was in the pool,<br/>but ranked below 5?"}
+    C4 -->|yes| L4["rank-miss<br/>fix: reranking"]
+    C4 -->|no| L5["partial-grounding<br/>fix: metadata filtering, k tuning"]
+```
+
+The order is not arbitrary: earlier faults cause later ones, so a severed clause
+is labelled for chunking rather than for the ranking problem it also looks like.
 
 Two of the five labels never fire on this corpus, and that is a property of the chunkers rather than an accident: both `naive` and `clause` tile their document contiguously with no gaps, so if every relevant chunk is retrieved then every gold character is retrieved, and the query cannot be failing. `ceiling-bound` and `partial-grounding` are reachable only for a chunker that drops text. They are kept, and their zero counts reported, because a non-zero count on a future chunker is a signal worth having.
 
@@ -147,7 +202,8 @@ Its one governing rule is that **no number appears in it that was not produced b
 ## Tests
 
 ```bash
-pytest          # 87 tests, ~25s, no model weights loaded
+pip install -r requirements-dev.txt   # runtime + test dependencies
+pytest                                # 87 tests, ~40s, no model weights loaded
 ```
 
 A repo whose entire pitch is measurement rigour had no tests. These are the ones that would catch a wrong number rather than a crash:
@@ -158,6 +214,50 @@ A repo whose entire pitch is measurement rigour had no tests. These are the ones
 - **Label ordering** — a query satisfying two conditions takes the earlier one, and a split-but-retrieved clause is not blamed for a failure it did not cause.
 - **The dense path is unchanged** — `retrieve()` with no sparse index issues the identical single search it did before hybrid retrieval existed.
 - **Backlog attribution** — a config that moves two levers cannot lend its delta to either, and a lever that made things worse reports a negative number rather than being dropped.
+
+### Verifying it end to end
+
+Five steps from a fresh clone, in order. Each one states what it should produce; if a step does not produce it, stop there rather than carrying on to the next.
+
+**1. Install.** Runtime and test dependencies come from one file:
+
+```bash
+pip install -r requirements-dev.txt
+```
+
+**2. Run the tests.** No network, no model weights, no eval set needed — chunking, the metrics, the taxonomy and the report builder are all pure Python:
+
+```bash
+pytest
+```
+
+Expect `87 passed`, in about 40 seconds. This is the step that catches a wrong number; step 3 only catches a broken run.
+
+**3. Reproduce the published run.** `data/eval_set.json` is committed, so this needs no CUAD download:
+
+```bash
+python run_eval.py
+```
+
+The first run pulls ~200 MB of model weights; after that the seven configurations take about five minutes (measured: 4m58s, weights already cached) on a laptop CPU. The table printed to the console must match [Results](#results) row for row — same corpus, same seed, same numbers. It is deterministic, so a row that differs is a real change, not noise.
+
+**4. Diff the run against what is committed.** The four output files are in the repo precisely so this comparison is possible:
+
+```bash
+git diff --stat results/
+```
+
+Exactly two lines should differ: the `Generated ... UTC` header in `report.md` and the one in `client_report.md`. `per_query.json` and `taxonomy.json` come out **byte-identical** — same 50 queries, same 30-deep rankings, same failure labels. The run is deterministic, so anything else in that diff is a behaviour change, and it should be one you meant to make.
+
+**5. Re-derive a failure label by hand.** This is the claim the taxonomy rests on — that no model judged anything and a client can check any label themselves:
+
+```bash
+python -c "import json; print(json.dumps(json.load(open('results/taxonomy.json'))['summary']['patterns'], indent=2))"
+```
+
+Each pattern names two example queries. Take one, find its `query_id` in the `labels` list of `taxonomy.json` for the evidence the rule fired on, then find the same id in `per_query.json` and read `missed_spans` against `ranked_chunk_ids`. The label follows from chunk offsets and rank positions by the rules in [`docs/metrics.md`](docs/metrics.md#failure-labels), and `tests/test_taxonomy.py` asserts the whole partition re-derives from these two committed files.
+
+To point the harness at your own documents instead of CUAD, see [Running it on your own corpus](#running-it-on-your-own-corpus).
 
 ## Documentation
 
